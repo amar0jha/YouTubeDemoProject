@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    resizeMode: 'contain',
+    resizeMode: 'cover',
     // backgroundColor: 'red',
   },
   subscribeBg: {
@@ -176,5 +176,20 @@ const styles = StyleSheet.create({
   commonMargin:{
     marginVertical:8
   },
+  likeText: {
+    fontSize: 14,
+    fontWeight: '500',
+    color: colors.black,
+    marginStart: 8,
+    textAlign: 'center',
+  },
+  likedText: {
+    fontSize: 14,
+    fontWeight: '500',
+    color: colors.blue, // Color when liked
+    marginStart: 8,
+    textAlign: 'center',
+  },
+  
 });
 export default styles;

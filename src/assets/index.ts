@@ -97,6 +97,11 @@ const Icons = {
     premiumIcon:require(`${pathToIcons}/video.png`),
     timeWatchedIcon:require(`${pathToIcons}/watchedtime.png`),
     downloadedIcon:require(`${pathToIcons}/downloadedic.png`),
+
+    saveVideoIcon:require(`${pathToIcons}/bookmark.png`),
+    likedVideoIcon:require(`${pathToIcons}/like.png`),
+    disLikedVideoIcon:require(`${pathToIcons}/dislike.png`),
+
 }
 
 const Images = {

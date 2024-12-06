@@ -13,6 +13,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addSubscription, removeSubscription } from '../../redux/actions/subscriptionActions';
 
 const DetailFooter = ({ videoData }: any) => {
+
+  const [isLike, setIsLike] = useState(false);
+  const [isDisLike, setIsDisLike] = useState(false);
+  const [isSave, setIsSave] = useState(false);
+  const [isDownload, setIsDownload] = useState(false);
+
+
   const { id, channelName, profileImage, subscribers } = videoData;
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isBellIconVisible, setIsBellIconVisible] = useState(false);
@@ -42,19 +49,37 @@ const DetailFooter = ({ videoData }: any) => {
     setIsBellIconVisible(false);  
   };
 
+  const handleLike =() =>{
+    setIsLike(!isLike)
+    // setIsDisLike(isDisLike)
+  };
+  const handleDisLike =() =>{
+    setIsDisLike(!isDisLike)
+    // setIsLike(isLike)
+  };
+
+  const handleSave =() =>{
+    setIsSave(!isSave)
+    // setIsLike(isLike)
+  }
+  const handleDownload =() =>{
+    setIsDownload(!isDownload)
+    // setIsLike(isLike)
+  }
+
   const listItems = [
-    { id: '1', image: Icons.thumbsUpIcon, text: 'Like' },
-    { id: '2', image: Icons.thumbsDownIcon, text: 'Dislike' },
+    { id: '1', image : isLike ?  Icons.likedVideoIcon : Icons.thumbsUpIcon, text: 'Like' , onPress: handleLike},
+    { id: '2', image: isDisLike ? Icons.disLikedVideoIcon :  Icons.thumbsDownIcon, text: 'Dislike' , onPress: handleDisLike},
     { id: '3', image: Icons.shareIcon, text: 'Share' },
     { id: '4', image: Icons.shortsUnSelected, text: 'Remix' },
-    { id: '5', image: Icons.downloadVideoIcon, text: 'Download' },
+    { id: '5', image: isDownload? Icons.downloadedIcon: Icons.downloadVideoIcon, text: 'Download', onPress:handleDownload },
     { id: '6', image: Icons.clipIcon, text: 'Clip' },
-    { id: '7', image: Icons.savePlaylistIcon, text: 'Save' },
+    { id: '7', image: isSave? Icons.saveVideoIcon: Icons.savePlaylistIcon, text: 'Save',onPress:handleSave },
     { id: '8', image: Icons.reportIcon, text: 'Report' },
   ];
 
   const renderItem = ({ item }: any) => (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={item.onPress}>
       <View style={styles.listBg}>
         <Image source={item.image} style={styles.imageSize} />
         <Text style={styles.listText}>{item.text}</Text>
