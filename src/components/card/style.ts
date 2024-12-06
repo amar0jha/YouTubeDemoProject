@@ -82,6 +82,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
+
+
+  containerImage1: {
+    height: 300, 
+    width: '100%',
+    position: 'relative', 
+  },
 });
 
 export default styles;

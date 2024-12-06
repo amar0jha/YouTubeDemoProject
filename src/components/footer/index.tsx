@@ -27,7 +27,6 @@ const FooterItems = ({ video, needProfileIcon, needMoreIcon }: any) => {
     { icon: Icons.notInterested, text: 'Not Interested', onPress: () => { } },
     { icon: Icons.dontRecommendChannel, text: 'Don\'t recommend channel', onPress: () => { } },
     { icon: Icons.reportIcon, text: 'Report', onPress: () => { } },
-
   ]
 
   const renderItem = ({ item, index }: any) => (

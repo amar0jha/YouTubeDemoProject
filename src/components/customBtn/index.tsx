@@ -13,8 +13,8 @@ const ButtonComponent = ({buttonTitle, onPress, disabled}:any) => {
             styles.button,
             {
               backgroundColor: disabled
-                ? colors.grey
-                : colors.buttonGreen,
+                ? colors.lightTransparent
+                : colors.red,
             },
           ]}>
           <Text style={styles.textStyle}>{buttonTitle}</Text>

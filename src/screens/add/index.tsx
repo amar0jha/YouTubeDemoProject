@@ -1,25 +1,43 @@
-import {View, Text, SafeAreaView, Image, TouchableOpacity} from 'react-native';
-import React from 'react';
-import {Icons, Images} from '../../assets';
+import { View, Text, SafeAreaView, Image, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { Icons } from '../../assets'; 
 import styles from './style';
+import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 
 const AddScreen = () => {
-  return (
-    <SafeAreaView>
-      <View>
-        <View style={styles.container}>
-          <View style={styles.container1}>
-            <Image source={Icons.playQueueIcon} style={styles.iconImageSize} />
-            <View style={styles.textArrange}>
-              <Text style={styles.textStyle}>Play next in queue</Text>
-            </View>
-          </View>
 
-          <View style={styles.imageStyleView}>
-            <TouchableOpacity>
-              <Image source={Icons.pIcon} style={styles.imageSize} />
-            </TouchableOpacity>
-          </View>
+  const [imageUri, setImageUri] = useState("")
+
+  const openGallery = () => {
+    // console.log("gallery");
+    launchImageLibrary({ mediaType: 'photo', quality: 1 }, (response: any) => {
+        // console.log(response,'dsadadasda');
+        if (response.assets && response.assets[0]) {
+            // console.log(imageUri, "imageuri")
+            setImageUri(response.assets[0].uri);
+        }
+    });
+};
+const handleTakePhoto = () => {
+  // console.log('launch camera');
+  launchCamera({ mediaType: 'photo', quality: 1 }, (response: any) => {
+      // console.log('launch camera');
+      if (response.assets && response.assets[0]) {
+          // console.log(imageUri, "image uri")
+          setImageUri(response.assets[0].uri);
+      }
+  });
+}
+  return (
+    <SafeAreaView style={styles.safeAreaContainer}>
+      <View style={styles.container}>
+        <View style={styles.containerSec}>
+          <TouchableOpacity style={styles.container1} onPress={handleTakePhoto}>
+            <Image source={Icons.cameraIcons} style={styles.iconImageSize} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.imageStyleView} onPress={openGallery}>
+            <Image source={Icons.galleryIcons} style={styles.imageSize} />
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>

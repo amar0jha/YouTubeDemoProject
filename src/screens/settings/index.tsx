@@ -1,124 +1,107 @@
-// import React, { useEffect, useState } from 'react';
-// import { View, Text, SafeAreaView, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native';
-// import styles from './style';
-// import FooterItems from '../../components/footer';
-// import HomeVideoItems from '../../components/card';
-// import videos from '../../../videos.json';
-// import ThumbnailComponent from '../../components/thumbnail';
-// import DetailFooter from '../../components/detailFooter';
-// import AsyncStorage from '@react-native-async-storage/async-storage';
-// import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { View, Text, TouchableOpacity, SectionList, Image } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import styles from './style';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/native';
+import { Icons } from '../../assets';
 
-// const PlayerScreen = ({ route }: any) => {
-//   const { videoData } = route?.params;
-//   const navigation = useNavigation();
-//   const [loading, setLoading] = useState(false);
+const SettingScreen = () => {
+  const navigation: any = useNavigation();
 
-//   // Save video history to AsyncStorage
-//   const addToHistory = async (video) => {
-//     try {
-//       const storedHistory = await AsyncStorage.getItem('videoHistory');
-//       const parsedHistory = storedHistory ? JSON.parse(storedHistory) : [];
+  const sections = [
+    {
+      title: 'Account',
+      data: [
+        { title: 'General', icon: Icons.settingsIcon }, 
+        { title: 'Switch account', icon: Icons.switchAccountIcon },
+        { title: 'Family Centre', icon: Icons.familyCentreIcon },
+        { title: 'Notifications', icon: Icons.notificationIcon },
+        { title: 'Purchases and memberships', icon: Icons.purchasesIcon },
+        { title: 'Billing and payments', icon: Icons.billingIcon },
+        { title: 'Manage all history', icon: Icons.historyIcon },
+        { title: 'Your data in YouTube', icon: Icons.dataIcon },
+        { title: 'Privacy', icon: Icons.privacyIcon },
+        { title: 'Connected apps', icon: Icons.connectedAppsIcon },
+        { title: 'Try experimental new features', icon: Icons.experimentalIcon },
+      ],
+    },
+    {
+      title: 'Video and audio preferences',
+      data: [
+        { title: 'Video quality preferences', icon: Icons.videoQualityIcon },
+        { title: 'Playback', icon: Icons.playbackIcon },
+        { title: 'Captions', icon: Icons.captionsIcon },
+        { title: 'Data saving', icon: Icons.dataSavingIcon },
+        { title: 'Downloads', icon: Icons.downloadVideoIcon },
+        { title: 'Live chat', icon: Icons.liveChatIcon },
+        { title: 'Accessibility', icon: Icons.accessibilityIcon },
+        { title: 'Watch on TV', icon: Icons.watchOnTVIcon },
+      ],
+    },
+    {
+      title: 'Help and policy',
+      data: [
+        { title: 'Help', icon: Icons.helpIcon },
+        { title: 'YouTube Terms of Service', icon: Icons.termsIcon },
+        { title: 'Send feedback', icon: Icons.feedbackIcon },
+        { title: 'About', icon: Icons.aboutIcon },
+      ],
+    },
+    {
+      title: 'Developer preferences',
+      data: [{ title: '', icon: '' }],
+    },
+  ];
 
-//       // Add the new video to the history array
-//       const updatedHistory = [video, ...parsedHistory];
+  const handleLogout = async () => {
+    await AsyncStorage.removeItem('userToken');
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'SignInScreen' }],
+    });
+  };
 
-//       // Limit to the latest 20 videos
-//       if (updatedHistory.length > 20) {
-//         updatedHistory.pop();
-//       }
+  const handleBack = () => {
+    navigation.goBack(); 
+  };
 
-//       // Save the updated history back to AsyncStorage
-//       await AsyncStorage.setItem('videoHistory', JSON.stringify(updatedHistory));
-//     } catch (error) {
-//       console.error('Error saving video history', error);
-//     }
-//   };
+  const renderItem = ({ item }: any) => (
+    <TouchableOpacity style={styles.settingItem}>
+      <Image source={item.icon} style={styles.settingItemIcon} />
+      <Text style={styles.settingItemText}>{item.title}</Text>
+    </TouchableOpacity>
+  );
 
-//   useEffect(() => {
-//     // Save video to history when the PlayerScreen is loaded
-//     addToHistory(videoData);
-//   }, [videoData]);
+  const renderSectionHeader = ({ section: { title } }: any) => (
+    <View style={styles.sectionHeader}>
+      <Text style={styles.sectionHeaderText}>{title}</Text>
+    </View>
+  );
 
-//   const renderItem = ({ item }: any) => <HomeVideoItems video={item} needProfileIcon needMoreIcon />;
-//   const handleKeyExtractor = (item: any) => item.id.toString();
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.topBarContainer}>
+        <TouchableOpacity style={styles.backButtonContainer} onPress={handleBack}>
+          <Image source={Icons.backIcons} style={styles.backButtonIcon} />
+        </TouchableOpacity>
+        <Text style={styles.sectionHeaderText}>Settings</Text>
+      </View>
 
-//   return (
-//     <SafeAreaView>
-//       <View style={styles.container}>
-//         {/* Video thumbnail and controls */}
-//         <ThumbnailComponent video={videoData} forward backward play pause time />
+      <SectionList
+        sections={sections}
+        keyExtractor={(item, index) => item + index}
+        renderItem={renderItem}
+        bounces={false}
+        renderSectionHeader={renderSectionHeader}
+        contentContainerStyle={styles.listContent}
+      />
+      
+      <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
+        <Text style={styles.logoutButton}>Logout</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
+  );
+};
 
-//         <TouchableOpacity>
-//           <FooterItems video={videoData} needProfileIcon={false} needMoreIcon={false} />
-//         </TouchableOpacity>
-
-//         {/* Video details */}
-//         <DetailFooter videoData={videoData} />
-
-//         {/* Render the list of related videos */}
-//         <FlatList
-//           data={videos}
-//           renderItem={renderItem}
-//           keyExtractor={handleKeyExtractor}
-//           bounces={false}
-//           style={{ marginTop: 15 }}
-//           ListFooterComponent={loading ? <ActivityIndicator size="large" color="blue" /> : null}
-//         />
-//       </View>
-//     </SafeAreaView>
-//   );
-// };
-
-// export default PlayerScreen;
-
-
-// import React, { useEffect, useState } from 'react';
-// import { View, FlatList, Text, TouchableOpacity, SafeAreaView } from 'react-native';
-// import AsyncStorage from '@react-native-async-storage/async-storage';
-// import HomeVideoItems from '../../components/card';
-// import HomeHeader from '../../components/header';
-
-// const HistoryScreen = () => {
-//   const [history, setHistory] = useState([]);
-
-//   const loadHistory = async () => {
-//     try {
-//       const storedHistory = await AsyncStorage.getItem('videoHistory');
-//       if (storedHistory) {
-//         setHistory(JSON.parse(storedHistory));
-//       }
-//     } catch (error) {
-//       console.error('Error loading video history', error);
-//     }
-//   };
-
-//   useEffect(() => {
-//     loadHistory();
-//   }, []);
-
-//   const renderItem = ({ item }: any) => <HomeVideoItems video={item} needProfileIcon needMoreIcon />;
-//   const handleKeyExtractor = (item: any) => item.id.toString();
-
-//   return (
-// //     <SafeAreaView>
-//     <View style={{ flex:1,paddingVertical: 10 }}>
-//         <HomeHeader/>
-//       <Text style={{ fontSize: 24, fontWeight: 'bold', margin: 10 }}>History</Text>
-//       {history.length === 0 ? (
-//         <Text>No history yet.</Text>
-//       ) : (
-//         <FlatList
-//           data={history}
-//           renderItem={renderItem}
-//           bounces={false}
-//           keyExtractor={handleKeyExtractor}
-//         />
-//       )}
-//     </View>
-//     // </SafeAreaView>
-//   );
-// };
-
-// export default HistoryScreen;
-
+export default SettingScreen;

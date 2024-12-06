@@ -1,11 +1,21 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import colors from '../../theme/color';
+
+const screenWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   container: {
     // flex: 1,
     // backgroundColor:'green',
   },
+  historyItemContainer: {
+    width: screenWidth / 2,
+    marginRight: 10, 
+    marginLeft: 10,
+    padding: 10,
+    height:'40%'
+  },
+  
   profileContainer: {
     // flex:1,
     marginVertical: 20,
@@ -13,13 +23,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginHorizontal: 15,
   },
+  profileImageContainer:{
+    width: 50,
+    height: 50,
+  },
   profileImage: {
     width: 50,
     height: 50,
-    alignSelf: 'center',
-    borderRadius: 25,
-    resizeMode: 'contain',
-    // backgroundColor:'green'
+    borderRadius: 25, 
+    resizeMode: 'cover',
   },
   channelNameContainer: {
     flexDirection: 'column',
@@ -171,6 +183,13 @@ const styles = StyleSheet.create({
     height: 18,
     width: 18,
     marginHorizontal:2,
+  },
+
+  containerImage: {
+    width: '100%',
+    height: 120,
+    borderRadius: 10,
+    resizeMode: 'cover',
   },
 });
 export default styles;

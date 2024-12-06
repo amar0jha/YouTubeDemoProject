@@ -62,8 +62,41 @@ const Icons = {
     micIcons:require(`${pathToIcons}/mic.png`),
     googleLogin:require(`${pathToIcons}/social.png`),
     ytLogo:require(`${pathToIcons}/ytlogoic.png`),
+    youtubeText:require(`${pathToIcons}/youtubel.jpg`),
+    cameraIcon:require(`${pathToIcons}/camera.png`),
+    galleryIcon:require(`${pathToIcons}/gallery.png`),
+    cameraIcons:require(`${pathToIcons}/camera1.png`),
+    galleryIcons:require(`${pathToIcons}/gallery1.png`),
 
+    familyCentreIcon:require(`${pathToIcons}/group.png`),
+    privacyIcons:require(`${pathToIcons}/padlock.png`),
 
+    privacyIcon:require(`${pathToIcons}/padlock.png`),
+    billingIcon:require(`${pathToIcons}/wallet.png`),
+    purchasesIcon:require(`${pathToIcons}/membership.png`),
+    historyIcon:require(`${pathToIcons}/history.png`),
+    dataIcon:require(`${pathToIcons}/yourdata.png`),
+    connectedAppsIcon:require(`${pathToIcons}/connectedapp.png`),
+    experimentalIcon:require(`${pathToIcons}/experimental.png`),
+
+    videoQualityIcon:require(`${pathToIcons}/hd.png`),
+    playbackIcon:require(`${pathToIcons}/playback.png`),
+    captionsIcon:require(`${pathToIcons}/subtitles.png`),
+    dataSavingIcon:require(`${pathToIcons}/datasaving.png`),
+    liveChatIcon:require(`${pathToIcons}/live.png`),
+    accessibilityIcon:require(`${pathToIcons}/body.png`),
+    watchOnTVIcon:require(`${pathToIcons}/television.png`),
+
+    helpIcon:require(`${pathToIcons}/helpic.png`),
+    termsIcon:require(`${pathToIcons}/termservice.png`),
+    feedbackIcon:require(`${pathToIcons}/feedback.png`),
+    aboutIcon:require(`${pathToIcons}/about.png`),
+
+    yourVideoIcon:require(`${pathToIcons}/yourvideo.png`),
+    yourMoviesIcon:require(`${pathToIcons}/clapperboard.png`),
+    premiumIcon:require(`${pathToIcons}/video.png`),
+    timeWatchedIcon:require(`${pathToIcons}/watchedtime.png`),
+    downloadedIcon:require(`${pathToIcons}/downloadedic.png`),
 }
 
 const Images = {

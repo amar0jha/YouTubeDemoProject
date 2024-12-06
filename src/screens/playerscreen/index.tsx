@@ -9,9 +9,12 @@ import ThumbnailComponent from '../../components/thumbnail';
 import DetailFooter from '../../components/detailFooter';
 import { useDispatch } from 'react-redux';
 import { addVideoHistory } from '../../redux/actions/videoHistoryActions';
+import { Icons } from '../../assets';
+import { useNavigation } from '@react-navigation/native';
 
 const PlayerScreen = ({route}: any) => {
   const {videoData} = route?.params;
+  const navigation = useNavigation(); 
 //   const {videoData} = useRoute()?.params
 const dispatch = useDispatch();
 // const handleVideo = (video) => {
@@ -32,13 +35,10 @@ useEffect(() => {
   return (
      <SafeAreaView>
     <View style={styles.container}>
-      {/* <View style={styles.containerImage}>
-        <Image source={{uri: videoData.videoImage}} style={styles.imageSize} />
-        <View style={styles.videoTimeContainer}>
-          <Text style={styles.timeText}>{videoData.videoTime}</Text>
-        </View>
-      </View> */}
-      <ThumbnailComponent video={videoData} needMoreIcon forward backward play pause time/>
+    <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+          <Image source={Icons.backIcons} style={styles.imageSizeBack} />
+        </TouchableOpacity>
+      <ThumbnailComponent video={videoData} needMoreIcon forward backward play pause time styles={styles.containerImage}/>
       <TouchableOpacity>
       <FooterItems video={videoData} needProfileIcon={false} needMoreIcon={false}/>
       </TouchableOpacity>

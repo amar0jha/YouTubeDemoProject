@@ -3,7 +3,7 @@ import React from 'react';
 import {Icons, Images} from '../../assets';
 import styles from './style';
 
-const HomeHeader = ({youtubeLogo, settingIcon,showBackButton, onBackPress = () => {} , onSearchPress = () => {} }: any) => {
+const HomeHeader = ({youtubeLogo, settingIcon,showBackButton, onBackPress = () => {} , onSearchPress = () => {},onSettingPress = () => {} }: any) => {
   return (
     <SafeAreaView style={styles.container}>
       {youtubeLogo ? (
@@ -31,7 +31,7 @@ const HomeHeader = ({youtubeLogo, settingIcon,showBackButton, onBackPress = () =
         </TouchableOpacity>
 
         {settingIcon && (
-          <TouchableOpacity>
+          <TouchableOpacity onPress={onSettingPress}>
             <Image source={Icons.settingsIcon} style={styles.headerIcons} />
           </TouchableOpacity>
         )}

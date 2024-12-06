@@ -10,9 +10,10 @@ const ThumbnailComponent = ({
   play,
   pause,
   time,
+  styles
 }: any) => {
   return (
-    <View style={styles.containerImage}>
+    <View style={styles}>
       <VideosComponent
         video={video}
         forward={forward}

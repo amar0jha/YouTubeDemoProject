@@ -15,7 +15,7 @@ const HomeVideoItems = ({video,onPress,needProfileIcon,needMoreIcon}:any) => {
           <Text style={styles.timeText}>{video.videoTime}</Text>
         </View>
       </View> */}
-      <ThumbnailComponent video={video} time/>
+      <ThumbnailComponent video={video} time styles={styles.containerImage1}/>
       <FooterItems video={video} needProfileIcon={needProfileIcon} needMoreIcon={needMoreIcon}/>
     </TouchableOpacity>
   );

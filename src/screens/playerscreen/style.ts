@@ -6,6 +6,17 @@ const styles = StyleSheet.create({
     // backgroundColor: 'grey',
     marginBottom: 10,
   },
+  backButton: {
+    position: 'absolute',
+    top: 10, 
+    left: 10, 
+    zIndex: 10, 
+  },
+  imageSizeBack: {
+    width: 25,
+    height: 25,
+    tintColor: colors.white,
+  },
   containerImage: {
     height: 300, 
     width: '100%',

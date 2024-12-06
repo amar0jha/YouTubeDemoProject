@@ -10,6 +10,7 @@ import SearchScreen from '../screens/searchScreen';
 import SplashScreen from '../screens/splash';
 import SignInScreen from '../screens/signIn';
 import SignUpScreen from '../screens/signUp';
+import SettingScreen from '../screens/settings';
 
 const Stack = createNativeStackNavigator();
 
@@ -63,11 +64,11 @@ const RootNavigator = () => {
           options={{headerShown: false}}
         />
 
-        {/* <Stack.Screen
+        <Stack.Screen
           component={SettingScreen}
           name={ScreenNames.SettingScreen}
           options={{headerShown: false}}
-        /> */}
+        />
 
         <Stack.Screen
           component={SearchScreen}

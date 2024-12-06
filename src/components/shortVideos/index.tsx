@@ -3,6 +3,9 @@ import { View, Text, Dimensions, TouchableOpacity, Image, StyleSheet } from 'rea
 import Video from 'react-native-video';
 import { Icons } from '../../assets';
 import styles from './style';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
+import { addSubscription, removeSubscription } from '../../redux/actions/subscriptionActions';
 
 const SingleShortVideo = ({ item, index, currentIndex ,likeCounts,  disliked,   dislikeCounts, liked, onLikePress, onDislikePress }: any) => {
 
@@ -14,10 +17,31 @@ const SingleShortVideo = ({ item, index, currentIndex ,likeCounts,  disliked,   
   const [localDisliked, setLocalDisliked] = useState(disliked);
   const [localDisLikeCounts, setLocalDisLikeCounts] = useState(dislikeCounts);
 
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
+  
+  const subscriptions = useSelector((state: any) => state.subscriptions.subscriptions);
+
+  useEffect(() => {
+    const isAlreadySubscribed = subscriptions.some((video: any) => video.id === item.id);
+    setIsSubscribed(isAlreadySubscribed);
+  }, [subscriptions, item.id]);
+
   const handleSubscribe = () => {
-    setIsSubscribed(!isSubscribed);
-    
+    if (isSubscribed) {
+     
+      dispatch(removeSubscription(item));
+    } else {
+      
+      dispatch(addSubscription(item));
+    }
+    setIsSubscribed(!isSubscribed); 
   };
+
+  // const handleSubscribes = () => {
+  //   setIsSubscribed(!isSubscribed);
+    
+  // };
 
   const onLikePressed = () => {
     setLocalLiked(!localLiked);
@@ -41,7 +65,7 @@ const SingleShortVideo = ({ item, index, currentIndex ,likeCounts,  disliked,   
       <View
         style={styles.container}>
         <TouchableOpacity activeOpacity={0.9} onPress={() => setMute(!mute)}
-          style={styles.reelContainer}>
+          style={styles.shortsContainer}>
           <Video
             videoRef={videoRef}
             repeat={true}
@@ -49,14 +73,14 @@ const SingleShortVideo = ({ item, index, currentIndex ,likeCounts,  disliked,   
             paused={currentIndex === index ? false : true}
             source={{ uri: item.videoImage }}
             muted={mute}
-            style={styles.reels}
+            style={styles.shorts}
           />
         </TouchableOpacity>
         <View style={styles.details}>
           <View>
             <TouchableOpacity>
               <View
-                style={styles.userDetails}>
+                style={styles.channelDetails}>
                 <View
                   style={styles.profileImg}>
                   <Image
@@ -64,7 +88,7 @@ const SingleShortVideo = ({ item, index, currentIndex ,likeCounts,  disliked,   
                     style={styles.img}
                   />
                 </View>
-                <Text numberOfLines={2} style={styles.userName}>{item.channelName}</Text>
+                <Text numberOfLines={2} style={styles.channelName}>{item.channelName}</Text>
 
                 <TouchableOpacity onPress={handleSubscribe}>
           <View style={isSubscribed ? styles.subscribedBg : styles.subscribeBg}>

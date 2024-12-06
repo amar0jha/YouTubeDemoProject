@@ -2,19 +2,24 @@ import React from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
   Image,
   FlatList,
   TouchableOpacity,
+  Dimensions,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import styles from './style';
 import HomeHeader from '../../components/header';
 import {Icons, Images} from '../../assets';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useSelector} from 'react-redux';
+import ThumbnailComponent from '../../components/thumbnail';
+import FooterItems from '../../components/footer';
+import DataCard from '../../components/dataCard';
 
 const Profile = () => {
-  const navigation = useNavigation(); 
+  const navigation = useNavigation();
+
+  const history = useSelector((state: any) => state.videoHistory.history);
 
   const listItems = [
     {
@@ -39,6 +44,31 @@ const Profile = () => {
     },
   ];
 
+
+
+  const dataCardList = [
+    { icon: Icons.yourVideoIcon, text: 'Your videos', onPress: () => {  },  },
+    { icon: Icons.downloadVideoIcon, text: 'Downloads', onPress: () => { handleDownloadScreen}, onPressP: Icons.downloadedIcon},
+    { icon: Icons.yourMoviesIcon, text: 'Your movies', onPress: () => { } },
+    { icon: Icons.premiumIcon, text: 'Get YouTube Premium', onPress: () => { } },
+    { icon: Icons.timeWatchedIcon, text: 'Time watched', onPress: () => { } },
+    { icon: Icons.helpIcon, text: 'Help and feedback', onPress: () => { } },
+  ]
+
+  const handleDownloadScreen = () => {
+
+  }
+
+  const renderItemDataCard = ({ item, index }: any) => (
+    <DataCard
+      index={index}
+      icon={item.icon}
+      text={item.text}
+      onPress={item.onPress}
+      onPressP={item.onPressP}
+    />
+  );
+
   const renderItem = ({item}: any) => (
     <TouchableOpacity>
       <View style={styles.listBg}>
@@ -48,27 +78,44 @@ const Profile = () => {
     </TouchableOpacity>
   );
 
+  // const renderItemHist = ({ item }: any) => (
+  //   <View style={{height:'50%',width:'45%',}}>
+  //   {/* <HomeVideoItems video={item} needProfileIcon needMoreIcon /> */}
+  //   <ThumbnailComponent video={item} styles={styles.containerImage}/>
+  //   <FooterItems video={item} needMoreIcon />
+  //   </View>
+  // );
+  // const handleKeyExtractor = (item: any) => item.id.toString();
+
+  const renderItemHist = ({item}: any) => (
+    <View style={styles.historyItemContainer}>
+      <ThumbnailComponent video={item} styles={styles.containerImage} />
+      <FooterItems video={item} needMoreIcon />
+    </View>
+  );
+
+  const handleKeyExtractor = (item: any) => item.id.toString();
+
   const handleViewAll = () => {
-    navigation.navigate('HistoryScreen'); 
+    navigation.navigate('HistoryScreen');
   };
   const handleSearchPress = () => {
     navigation.navigate('SearchScreen');
   };
 
-  const handleLogout = async() =>{
-    await AsyncStorage.removeItem('userToken');
-    navigation.reset({
-      index:0,
-      routes: [{name:'SignInScreen'}]
-    })
-
-  }
+  const handleSettingPress = () => {
+    navigation.navigate('SettingScreen');
+  };
 
   return (
     <View style={styles.container}>
-      <HomeHeader settingIcon   onSearchPress={handleSearchPress} />
-      <View style={styles.profileContainer}>
-        <View>
+      <HomeHeader
+        settingIcon
+        onSearchPress={handleSearchPress}
+        onSettingPress={handleSettingPress}
+      />
+      <TouchableOpacity style={styles.profileContainer}>
+        <View style={styles.profileImageContainer}>
           <Image source={Images.dummyProfile} style={styles.profileImage} />
         </View>
         <View style={styles.channelNameContainer}>
@@ -89,7 +136,7 @@ const Profile = () => {
             </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
 
       <FlatList
         data={listItems}
@@ -102,13 +149,45 @@ const Profile = () => {
       />
 
       <View style={styles.listHeaders}>
-        <Text style={styles.listHeading} onPress={handleLogout}>History</Text>
+        <Text style={styles.listHeading}>History</Text>
         <TouchableOpacity onPress={handleViewAll}>
           <View style={styles.viewAllBg}>
             <Text style={styles.viewAll}>View all</Text>
           </View>
         </TouchableOpacity>
       </View>
+
+      {/* <View>
+      <FlatList
+          data={history}
+          renderItem={renderItemHist}
+          bounces={false}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={handleKeyExtractor}
+        />
+      </View> */}
+
+      <FlatList
+        data={history}
+        renderItem={renderItemHist}
+        bounces={false}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        keyExtractor={handleKeyExtractor}
+        snapToInterval={Dimensions.get('window').width / 2 + 10}
+        decelerationRate="fast"
+        // contentContainerStyle={styles.historyFlatlistContainer}
+      />
+
+      {/* <DataCard /> */}
+
+      <FlatList
+          data={dataCardList}
+          renderItem={renderItemDataCard}
+          bounces={false}
+          keyExtractor={(item, index) => index.toString} />
+
     </View>
   );
 };

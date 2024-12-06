@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {SwiperFlatList} from 'react-native-swiper-flatlist';
-// import SingleReel from '../reel';
 import shortsVideos from '../../../videos.json';
 import SingleShortVideo from '../shortVideos';
 import { useDispatch } from 'react-redux';

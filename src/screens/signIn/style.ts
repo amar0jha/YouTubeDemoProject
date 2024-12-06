@@ -1,53 +1,17 @@
 import { StyleSheet } from "react-native";
-
-// const styles = StyleSheet.create({
-    // container:{
-    //     justifyContent:'center',
-    //     alignItems:'center',
-    //     flex:1,
-    //     // backgroundColor:'green'
-    // },
-    // img:{
-    //     height:100,
-    //     width:300
-    // },
-    // title:{
-    //     marginBottom:40
-    // },
-    // idInput:{
-    //     borderWidth:1,
-    //     width:'80%',
-    //     fontSize:14,
-    //     borderRadius:5,
-    //     padding:10,
-    //     marginBottom:10,
-    //     borderColor:'grey',
-    //     backgroundColor:'lightgrey'
-    // },
-    // forget:{
-    //     // backgroundColor:'red',
-    //     // left:110
-    //     // justifyContent:'flex-end',
-    //     // alignContent:'flex-end',
-    //     flexDirection:'column',
-    //     width:'100%',
-    //     alignItems:'flex-end',
-    //     right:40
-    // }
-
+import colors from "../../theme/color";
 
 const styles = StyleSheet.create({
     mainContainer: {
       flex: 1,
-      // alignItems: 'center',
-      // backgroundColor:'red',
-      // marginHorizontal:30
+      backgroundColor:colors.white,
     },
     logoImage: {
-      marginBottom: 40,
+      marginBottom: 15,
       resizeMode:'contain',
       alignSelf: 'center',
-      height:50
+      height:40,
+ 
     },
     subContainer: {
       flex: 1,
@@ -56,34 +20,33 @@ const styles = StyleSheet.create({
     },
     forgotPass: {
       marginTop: 14,
-      // alignSelf: 'center',
-      // left:140,
+     
       color: '#3797EF',
       alignItems:'flex-end',
       top:8
     },
     forgotPassText: {
       fontSize: 15,
-      color: '#3797EF',
+      color: '#f52d05',
     },
-    facebookContainer: {
+    googleContainer: {
       flexDirection: 'row',
       alignSelf: 'center',
       marginTop: 40,
       alignItems:'center'
     },
-    facebookLogo: {
-      width: 30,
+    googleLogo: {
+      width: 25,
       height: 25,
       marginRight: 10,
       alignSelf:'center'
     },
-    facebookText: {
+    googleText: {
       fontSize: 14,
       fontWeight: '600',
-      color: '#3797EF',
+      color:colors.black,
     },
-    line: {
+    lineView: {
       width: 140,
       height: 1,
       borderWidth: 1,
@@ -95,7 +58,7 @@ const styles = StyleSheet.create({
     },
     orText: {
       fontSize: 20,
-      color: 'grey',
+      color: colors.grey,
     },
     dividerContainer: {
       flexDirection: 'row',
@@ -112,28 +75,21 @@ const styles = StyleSheet.create({
     },
     signupText: {
       fontSize: 16,
-      color: '#3797EF',
+      color:'#f52d05'
     },
     error: {
       color: 'red',
     },
-    inputView: {
+    inputContainer: {
       borderWidth: 1,
       width: '100%',
       height: 45,
-      // justifyContent:'center',
       borderColor: '#ccc',
-      borderRadius: 5,
-      // marginTop:16,
+      borderRadius: 10,
       paddingHorizontal: 10,
       fontSize: 16,
-      // color:'red',
-      // backgroundColor:'yellow',
-      // alignSelf:'center',
     },
-    facebook:{
-    
-    },
+   
     errorText: {
       color: 'red',
       fontSize: 12,

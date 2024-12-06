@@ -7,11 +7,12 @@ import CustomInput from '../../components/customInput';
 import styles from './style';
 import ButtonComponent from '../../components/customBtn';
 import { signInValidate, signInValidations } from './validation';
+import auth from '@react-native-firebase/auth'
 
 const SignInScreen = () => {
   const navigation: any = useNavigation();
-  const [values, setValues]: any = useState({signInValidations});
-  const [errors, setErrors]: any = useState({});
+  const [formData, setformData]: any = useState({signInValidations});
+  const [validationErrors, setvalidationErrors]: any = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const SignInScreen = () => {
         setIsLoggedIn(true);
         navigation.reset({
           index: 0,
-          routes: [{name: 'Bottom'}],
+          routes: [{name: 'BottomTab'}],
         });
       }
     };
@@ -29,31 +30,31 @@ const SignInScreen = () => {
   }, [navigation]);
 
   const handleChange = (field: any, value: any) => {
-    setValues({
-      ...values,
+    setformData({
+      ...formData,
       [field]: value,
     });
     if (value.trim() === '') {
-      setErrors({
-        ...errors,
+      setvalidationErrors({
+        ...validationErrors,
         [field]: `${
           field === 'username' ? 'Username' : 'Password'
         } is required`,
       });
     } else {
-      setErrors({
-        ...errors,
+      setvalidationErrors({
+        ...validationErrors,
         [field]: undefined,
       });
     }
   };
   const handleLogin = async () => {
-    const validationErrors = signInValidate(values);
-    setErrors(validationErrors);
+    const validationErrors = signInValidate(formData);
+    setvalidationErrors(validationErrors);
     if (Object.keys(validationErrors).length === 0) {
       try {
-        const {username, password} = values;
-        // await auth().signInWithEmailAndPassword(username, password);
+        const {username, password} = formData;
+        await auth().signInWithEmailAndPassword(username, password);
         await AsyncStorage.setItem('userToken', 'your_auth_token');
         
         setIsLoggedIn(true);
@@ -64,9 +65,9 @@ const SignInScreen = () => {
       } catch (error: any) {
         console.error('Login error: ', error);
         if (error.code === 'auth/invalid-email') {
-          setErrors({...errors, username: 'Invalid email address'});
+          setvalidationErrors({...validationErrors, username: 'Invalid email address'});
         }else {
-          setErrors({...errors, general: 'An error occurred. Please try again.'});
+          setvalidationErrors({...validationErrors, general: 'An error occurred. Please try again.'});
         }
       }
     } else {
@@ -76,24 +77,24 @@ const SignInScreen = () => {
 return (
     <SafeAreaView style={styles.mainContainer}>
       <View style={styles.subContainer}>
-        <Image source={Icons.ytLogo} style={styles.logoImage} />
+        <Image source={Images.youtubeLogo} style={styles.logoImage} />
         <View>
           <CustomInput
             placeholder={'Username, email address or mobile number'}
             onChangeText={text => handleChange('username', text)}
-            value={values.username}
-            style={styles.inputView}
-            touched={!!errors.username}
-            errors={errors.username}
+            value={formData.username}
+            style={styles.inputContainer}
+            touched={!!validationErrors.username}
+            errors={validationErrors.username}
           />
           
           <CustomInput
             placeholder={'Password'}
             onChangeText={text => handleChange('password', text)}
-            value={values.password}
-            style={styles.inputView}
-            touched={!!errors.password}
-            errors={errors.password}
+            value={formData.password}
+            style={styles.inputContainer}
+            touched={!!validationErrors.password}
+            errors={validationErrors.password}
             secureTextEntry
           />
           
@@ -104,26 +105,26 @@ return (
           <ButtonComponent
             buttonTitle={'Login'}
             onPress={handleLogin}
-            disabled={!values.username || !values.password}
+            disabled={!formData.username || !formData.password}
           />
 
-           {errors.general && <Text style={styles.errorText}>{errors.general}</Text>}
+           {validationErrors.general && <Text style={styles.errorText}>{validationErrors.general}</Text>}
 
         </View>
 
-        <View style={styles.facebookContainer}>
-          <Image source={Icons.googleLogin} style={styles.facebookLogo} />
-          <TouchableOpacity style={styles.facebook}>
-            <Text style={styles.facebookText}>Log in with Google</Text>
+        <View style={styles.googleContainer}>
+          <Image source={Icons.googleLogin} style={styles.googleLogo} />
+          <TouchableOpacity>
+            <Text style={styles.googleText}>Log in with Google</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.dividerContainer}>
-          <View style={styles.line} />
+          <View style={styles.lineView} />
           <View style={styles.orContainer}>
             <Text style={styles.orText}>OR</Text>
           </View>
-          <View style={styles.line} />
+          <View style={styles.lineView} />
         </View>
         <View style={styles.signUpContainer}>
           <Text style={styles.newAccountText}>Don't have an account?</Text>

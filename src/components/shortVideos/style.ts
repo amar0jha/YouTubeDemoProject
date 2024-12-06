@@ -14,12 +14,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         //   marginVertical:20
     },
-    reelContainer: {
+    shortsContainer: {
         width: '100%',
         height: '100%',
         position: 'absolute',
     },
-    reels: {
+    shorts: {
         width: '100%',
         height: '100%',
         position: 'absolute',
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         padding: 10,
        
     },
-    userDetails: {
+    channelDetails: {
         width: '40%',
         flexDirection: 'row',
         alignItems: 'center',
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
         borderRadius: 50,
     },
-    userName: {
+    channelName: {
         color: 'white', 
         fontSize: 16
     },
