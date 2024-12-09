@@ -6,6 +6,7 @@ import {
   FlatList,
   TouchableOpacity,
   Dimensions,
+  ScrollView,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import styles from './style';
@@ -114,6 +115,7 @@ const Profile = () => {
         onSearchPress={handleSearchPress}
         onSettingPress={handleSettingPress}
       />
+      <ScrollView>
       <TouchableOpacity style={styles.profileContainer}>
         <View style={styles.profileImageContainer}>
           <Image source={Images.dummyProfile} style={styles.profileImage} />
@@ -187,7 +189,7 @@ const Profile = () => {
           renderItem={renderItemDataCard}
           bounces={false}
           keyExtractor={(item, index) => index.toString} />
-
+</ScrollView>
     </View>
   );
 };
