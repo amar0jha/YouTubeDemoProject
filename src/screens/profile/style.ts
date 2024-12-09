@@ -5,7 +5,7 @@ const screenWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
     // backgroundColor:'green',
   },
   historyItemContainer: {

@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         width: 64,
       },
       allText: {
-        color: 'blue',
+        color: '#0457db',
         fontSize: 16,
         fontWeight: 'bold',
         marginHorizontal: 12,

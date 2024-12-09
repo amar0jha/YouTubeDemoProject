@@ -19,5 +19,6 @@ const ScreenNames = {
     HistoryScreen:'HistoryScreen',
     SettingScreen:'SettingScreen',
     SearchScreen:'SearchScreen',
+    DownloadScreen:'DownloadScreen',
 };
 export {ScreenNames};

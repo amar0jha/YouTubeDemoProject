@@ -8,73 +8,123 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import styles from './style';
-import {Icons, Images} from '../../assets';
+import { Icons } from '../../assets';
 import { useDispatch, useSelector } from 'react-redux';
 import { addSubscription, removeSubscription } from '../../redux/actions/subscriptionActions';
+import { addDownload, removeDownload } from '../../redux/actions/downloadActions';  
 
 const DetailFooter = ({ videoData }: any) => {
-
-  const [isLike, setIsLike] = useState(false);
-  const [isDisLike, setIsDisLike] = useState(false);
-  const [isSave, setIsSave] = useState(false);
-  const [isDownload, setIsDownload] = useState(false);
-
+  const [videoStates, setVideoStates] = useState({});
 
   const { id, channelName, profileImage, subscribers } = videoData;
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isBellIconVisible, setIsBellIconVisible] = useState(false);
   const dispatch = useDispatch();
 
-  const subscriptions = useSelector(state => state.subscriptions.subscriptions);
+  const subscriptions = useSelector((state) => state.subscriptions.subscriptions);
+  const downloads = useSelector((state) => state.downloads.downloads);
 
   useEffect(() => {
-    const isAlreadySubscribed = subscriptions.some(video => video.id === id);
+    const isAlreadySubscribed = subscriptions.some((video) => video.id === id);
     setIsSubscribed(isAlreadySubscribed);
-    setIsBellIconVisible(isAlreadySubscribed); 
+    setIsBellIconVisible(isAlreadySubscribed);
   }, [subscriptions, id]);
 
   const handleSubscribe = () => {
     if (isSubscribed) {
-      dispatch(removeSubscription(videoData));  
+      dispatch(removeSubscription(videoData));
     } else {
-      dispatch(addSubscription(videoData));  
+      dispatch(addSubscription(videoData));
     }
     setIsSubscribed(!isSubscribed);
-    setIsBellIconVisible(!isBellIconVisible); 
+    setIsBellIconVisible(!isBellIconVisible);
   };
 
   const handleBellClick = () => {
     dispatch(removeSubscription(videoData));
     setIsSubscribed(false);
-    setIsBellIconVisible(false);  
+    setIsBellIconVisible(false);
   };
 
-  const handleLike =() =>{
-    setIsLike(!isLike)
-    // setIsDisLike(isDisLike)
-  };
-  const handleDisLike =() =>{
-    setIsDisLike(!isDisLike)
-    // setIsLike(isLike)
+  const handleAction = (action: string) => {
+    setVideoStates((prevState) => {
+      const currentState = prevState[id] || {};
+      if (action === 'isLiked') {
+        return {
+          ...prevState,
+          [id]: {
+            ...currentState,
+            isLiked: !currentState.isLiked,
+            isDisliked: false,
+          },
+        };
+      }
+      if (action === 'isDisliked') {
+        return {
+          ...prevState,
+          [id]: {
+            ...currentState,
+            isDisliked: !currentState.isDisliked,
+            isLiked: false,
+          },
+        };
+      }
+      return {
+        ...prevState,
+        [id]: {
+          ...currentState,
+          [action]: !currentState[action],
+        },
+      };
+    });
   };
 
-  const handleSave =() =>{
-    setIsSave(!isSave)
-    // setIsLike(isLike)
-  }
-  const handleDownload =() =>{
-    setIsDownload(!isDownload)
-    // setIsLike(isLike)
-  }
+  const handleDownload = () => {
+    const isDownloaded = downloads.some((video) => video.id === id);
+
+    if (isDownloaded) {
+      dispatch(removeDownload(videoData)); 
+    } else {
+      dispatch(addDownload(videoData)); 
+    }
+
+    setVideoStates((prevState) => ({
+      ...prevState,
+      [id]: {
+        ...prevState[id],
+        isDownloaded: !isDownloaded,
+      },
+    }));
+  };
 
   const listItems = [
-    { id: '1', image : isLike ?  Icons.likedVideoIcon : Icons.thumbsUpIcon, text: 'Like' , onPress: handleLike},
-    { id: '2', image: isDisLike ? Icons.disLikedVideoIcon :  Icons.thumbsDownIcon, text: 'Dislike' , onPress: handleDisLike},
+    {
+      id: '1',
+      image: videoStates[id]?.isLiked ? Icons.likedVideoIcon : Icons.thumbsUpIcon,
+      text: 'Like',
+      onPress: () => handleAction('isLiked'),
+    },
+    {
+      id: '2',
+      image: videoStates[id]?.isDisliked ? Icons.disLikedVideoIcon : Icons.thumbsDownIcon,
+      text: 'Dislike',
+      onPress: () => handleAction('isDisliked'),
+    },
     { id: '3', image: Icons.shareIcon, text: 'Share' },
     { id: '4', image: Icons.shortsUnSelected, text: 'Remix' },
-    { id: '5', image: isDownload? Icons.downloadedIcon: Icons.downloadVideoIcon, text: 'Download', onPress:handleDownload },
+    {
+      id: '5',
+      image: videoStates[id]?.isDownloaded ? Icons.downloadedIcon : Icons.downloadVideoIcon,
+      text: videoStates[id]?.isDownloaded ? 'Downloaded' : 'Download',
+      onPress: handleDownload, 
+    },
     { id: '6', image: Icons.clipIcon, text: 'Clip' },
-    { id: '7', image: isSave? Icons.saveVideoIcon: Icons.savePlaylistIcon, text: 'Save',onPress:handleSave },
+    {
+      id: '7',
+      image: videoStates[id]?.isSaved ? Icons.saveVideoIcon : Icons.savePlaylistIcon,
+      text: 'Save',
+      onPress: () => handleAction('isSaved'),
+    },
     { id: '8', image: Icons.reportIcon, text: 'Report' },
   ];
 
@@ -102,7 +152,6 @@ const DetailFooter = ({ videoData }: any) => {
           </View>
         </TouchableOpacity>
 
-       
         {!isSubscribed && (
           <TouchableOpacity onPress={handleSubscribe}>
             <View style={styles.subscribeBg}>
@@ -111,7 +160,6 @@ const DetailFooter = ({ videoData }: any) => {
           </TouchableOpacity>
         )}
 
-        
         {isBellIconVisible && (
           <TouchableOpacity onPress={handleBellClick}>
             <View style={styles.bellIconBg}>
@@ -126,7 +174,7 @@ const DetailFooter = ({ videoData }: any) => {
       <FlatList
         data={listItems}
         renderItem={renderItem}
-        keyExtractor={item => item.id}
+        keyExtractor={(item) => item.id}
         horizontal
         bounces={false}
         showsHorizontalScrollIndicator={false}

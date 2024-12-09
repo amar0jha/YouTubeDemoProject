@@ -17,6 +17,8 @@ import videosData from '../../../videos.json';
 const Home = () => {
   const navigation = useNavigation();
 
+  const [selectedTab, setSelectedTab] = useState<string>('All');
+
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -61,9 +63,45 @@ const Home = () => {
     loadMoreVideos();
   };
 
+  const tabItems = ['All', 'Music', 'Indian pop music', 'T-Series', 'Neha Kakkar', 'Live', 'News', 'Mixes', 'Bhojpuri cinema', 'Comedy clubs', 'Jukebox', 'Movie musicals','Dramedy','Rahat Fateh Ali Khan','Volleyball','Reverbation','Recently uploaded','Posts', 'News to you','Send feedback'];
+
+  const handleTabSelect = (tab: string) => {
+    setSelectedTab(tab);
+  };
+
   return (
     <View style={styles.container}>
       <HomeHeader youtubeLogo onSearchPress={handleSearchPress} />
+      <View>
+        <FlatList
+          data={tabItems}
+          keyExtractor={(item) => item}
+          horizontal
+          bounces={false}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.tabsContainer}
+          renderItem={({ item, index }) => (
+            <TouchableOpacity
+              style={[
+                styles.tabItem,
+                selectedTab === item ? styles.selectedTab : null,
+                index === tabItems.length - 1 && styles.lastTabItem
+              ]}
+              onPress={() => handleTabSelect(item)}
+            >
+              <Text
+                style={[
+                  styles.tabText,
+                  selectedTab === item ? styles.selectedTabText : null,
+                  index === tabItems.length - 1 && styles.lastTabText
+                ]}
+              >
+                {item}
+              </Text>
+            </TouchableOpacity>
+          )}
+        />
+      </View>
       <FlatList
         data={videos}
         renderItem={renderItem}

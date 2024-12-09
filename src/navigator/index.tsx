@@ -11,6 +11,7 @@ import SplashScreen from '../screens/splash';
 import SignInScreen from '../screens/signIn';
 import SignUpScreen from '../screens/signUp';
 import SettingScreen from '../screens/settings';
+import DownloadScreen from '../screens/download';
 
 const Stack = createNativeStackNavigator();
 
@@ -73,6 +74,12 @@ const RootNavigator = () => {
         <Stack.Screen
           component={SearchScreen}
           name={ScreenNames.SearchScreen}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          component={DownloadScreen}
+          name={ScreenNames.DownloadScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

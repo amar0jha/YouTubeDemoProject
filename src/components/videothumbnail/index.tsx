@@ -25,8 +25,8 @@ const VideosComponent = ({ video, forward, backward, play, pause ,time}: any) =>
     const ref = useRef<VideoRef>();
 
     useEffect(() => {
-        Orientation.lockToLandscape();
-        SystemNavigationBar.fullScreen(true);
+        // Orientation.lockToLandscape();
+        // SystemNavigationBar.fullScreen(true);
     }, []);
     const handleVideo = (video) => {
         navigation.navigate('PlayerScreen', { videoData: video });

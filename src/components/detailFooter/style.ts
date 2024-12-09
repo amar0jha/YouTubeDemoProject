@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
   likedText: {
     fontSize: 14,
     fontWeight: '500',
-    color: colors.blue, // Color when liked
+    color: colors.blue,
     marginStart: 8,
     textAlign: 'center',
   },

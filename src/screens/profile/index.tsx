@@ -45,22 +45,27 @@ const Profile = () => {
     },
   ];
 
-
-
   const dataCardList = [
-    { icon: Icons.yourVideoIcon, text: 'Your videos', onPress: () => {  },  },
-    { icon: Icons.downloadVideoIcon, text: 'Downloads', onPress: () => { handleDownloadScreen}, onPressP: Icons.downloadedIcon},
-    { icon: Icons.yourMoviesIcon, text: 'Your movies', onPress: () => { } },
-    { icon: Icons.premiumIcon, text: 'Get YouTube Premium', onPress: () => { } },
-    { icon: Icons.timeWatchedIcon, text: 'Time watched', onPress: () => { } },
-    { icon: Icons.helpIcon, text: 'Help and feedback', onPress: () => { } },
-  ]
+    {icon: Icons.yourVideoIcon, text: 'Your videos', onPress: () => {}},
+    {
+      icon: Icons.downloadVideoIcon,
+      text: 'Downloads',
+      onPress: () => {
+        handleDownloadScreen();
+      },
+      onPressP: Icons.downloadedIcon,
+    },
+    {icon: Icons.yourMoviesIcon, text: 'Your movies', onPress: () => {}},
+    {icon: Icons.premiumIcon, text: 'Get YouTube Premium', onPress: () => {}},
+    {icon: Icons.timeWatchedIcon, text: 'Time watched', onPress: () => {}},
+    {icon: Icons.helpIcon, text: 'Help and feedback', onPress: () => {}},
+  ];
 
   const handleDownloadScreen = () => {
+    navigation.navigate('DownloadScreen');
+  };
 
-  }
-
-  const renderItemDataCard = ({ item, index }: any) => (
+  const renderItemDataCard = ({item, index}: any) => (
     <DataCard
       index={index}
       icon={item.icon}
@@ -115,51 +120,51 @@ const Profile = () => {
         onSearchPress={handleSearchPress}
         onSettingPress={handleSettingPress}
       />
-      <ScrollView>
-      <TouchableOpacity style={styles.profileContainer}>
-        <View style={styles.profileImageContainer}>
-          <Image source={Images.dummyProfile} style={styles.profileImage} />
-        </View>
-        <View style={styles.channelNameContainer}>
-          <View>
-            <Text numberOfLines={1} style={styles.nameText}>
-              Amar Nath Ojha
-            </Text>
+      <ScrollView bounces={false}>
+        <TouchableOpacity style={styles.profileContainer}>
+          <View style={styles.profileImageContainer}>
+            <Image source={Images.dummyProfile} style={styles.profileImage} />
           </View>
-          <View style={styles.channelIdContainer}>
+          <View style={styles.channelNameContainer}>
             <View>
-              <Text numberOfLines={1} style={styles.idText}>
-                @Amar_Ojha
+              <Text numberOfLines={1} style={styles.nameText}>
+                Amar Nath Ojha
               </Text>
             </View>
-            <View style={styles.lineView}></View>
-            <View>
-              <Text style={styles.channelText}>View channel {'>'} </Text>
+            <View style={styles.channelIdContainer}>
+              <View>
+                <Text numberOfLines={1} style={styles.idText}>
+                  @Amar_Ojha
+                </Text>
+              </View>
+              <View style={styles.lineView}></View>
+              <View>
+                <Text style={styles.channelText}>View channel {'>'} </Text>
+              </View>
             </View>
           </View>
-        </View>
-      </TouchableOpacity>
-
-      <FlatList
-        data={listItems}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-        horizontal
-        bounces={false}
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.flatlistContainer}
-      />
-
-      <View style={styles.listHeaders}>
-        <Text style={styles.listHeading}>History</Text>
-        <TouchableOpacity onPress={handleViewAll}>
-          <View style={styles.viewAllBg}>
-            <Text style={styles.viewAll}>View all</Text>
-          </View>
         </TouchableOpacity>
-      </View>
 
-      {/* <View>
+        <FlatList
+          data={listItems}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+          horizontal
+          bounces={false}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.flatlistContainer}
+        />
+
+        <View style={styles.listHeaders}>
+          <Text style={styles.listHeading}>History</Text>
+          <TouchableOpacity onPress={handleViewAll}>
+            <View style={styles.viewAllBg}>
+              <Text style={styles.viewAll}>View all</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+
+        {/* <View>
       <FlatList
           data={history}
           renderItem={renderItemHist}
@@ -170,26 +175,27 @@ const Profile = () => {
         />
       </View> */}
 
-      <FlatList
-        data={history}
-        renderItem={renderItemHist}
-        bounces={false}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={handleKeyExtractor}
-        snapToInterval={Dimensions.get('window').width / 2 + 10}
-        decelerationRate="fast"
-        // contentContainerStyle={styles.historyFlatlistContainer}
-      />
+        <FlatList
+          data={history}
+          renderItem={renderItemHist}
+          bounces={false}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={handleKeyExtractor}
+          snapToInterval={Dimensions.get('window').width / 2 + 10}
+          decelerationRate="fast"
+          // contentContainerStyle={styles.historyFlatlistContainer}
+        />
 
-      {/* <DataCard /> */}
+        {/* <DataCard /> */}
 
-      <FlatList
+        <FlatList
           data={dataCardList}
           renderItem={renderItemDataCard}
           bounces={false}
-          keyExtractor={(item, index) => index.toString} />
-</ScrollView>
+          keyExtractor={(item, index) => index.toString()}
+        />
+      </ScrollView>
     </View>
   );
 };
