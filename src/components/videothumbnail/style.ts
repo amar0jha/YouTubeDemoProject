@@ -26,9 +26,6 @@ const styles = StyleSheet.create({
     height: '100%',
     resizeMode: 'stretch', 
   },
- 
- 
-
 
 backgroundVideo:{
     width:'100%',
@@ -58,6 +55,59 @@ loader: {
     tintColor:colors.white,
     marginHorizontal:10,
   },
+
+
+  progressBarContainer: {
+    position: 'relative',
+    bottom: 40,
+    // left: 10,
+    // right: 10,
+    width: '100%',
+    justifyContent: 'center',
+},
+progressBar: {
+    width: '100%',
+    height: 40,
+},
+progressTimeContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 1,
+},
+progressTimeText: {
+    color: colors.white,
+    fontSize: 14,
+},
+fullScreenBtn: {
+  position: 'absolute',
+  bottom: 20,
+  right: 20,
+  zIndex: 10,
+},
+fullExitBtn:{
+  width:20,
+  height:20,
+  tintColor:colors.white,
+},
+
+fullScreenImage: {
+  width: '100%',
+  height: '100%',
+  resizeMode: 'cover',
+},
+
+// fullScreenBtn: {
+//   position: 'absolute',
+//   bottom: 20,
+//   right: 20,
+//   zIndex: 10,
+// },
+
+// fullExitBtn: {
+//   width: 40,
+//   height: 40,
+//   tintColor: colors.white,
+// },
 });
 
 export default styles;

@@ -14,7 +14,7 @@ const Subscription = () => {
 
   const tabItems = ['All', 'Today', 'Videos', 'Shorts', 'Live', 'Posts', 'Continue watching', 'Unwanted'];
 
-  const renderItemSubs = ({ item }: any) => <HomeVideoItems video={item} needProfileIcon needMoreIcon />;
+  const renderItemSubs = ({ item }: any) => <HomeVideoItems video={item} needProfileIcon needMoreIcon  />;
   
   const handleKeyExtractor = (item: any) => item.id.toString();
 

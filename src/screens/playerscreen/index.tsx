@@ -36,7 +36,7 @@ const PlayerScreen = ({ route }: any) => {
           <Image source={Icons.backIcons} style={styles.imageSizeBack} />
         </TouchableOpacity>
 
-        <ThumbnailComponent video={videoData} needMoreIcon forward backward play pause time styles={styles.containerImage} />
+        <ThumbnailComponent video={videoData} needMoreIcon forward backward play pause showProgressBar fullScreen styles={styles.containerImage} />
 
         <View style={styles.footerContainer}>
           <TouchableOpacity>

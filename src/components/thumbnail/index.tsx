@@ -10,6 +10,8 @@ const ThumbnailComponent = ({
   play,
   pause,
   time,
+  fullScreen,
+  showProgressBar,
   styles
 }: any) => {
   return (
@@ -21,6 +23,8 @@ const ThumbnailComponent = ({
         play={play}
         pause={pause}
         time={time}
+        showProgressBar={showProgressBar}
+        fullScreen={fullScreen}
       />
     </View>
   );
