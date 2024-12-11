@@ -49,7 +49,6 @@ const Subscription = () => {
           <Text style={styles.allText}>All</Text>
         </TouchableOpacity>
       </View>
-
      
       <View>
         <FlatList
