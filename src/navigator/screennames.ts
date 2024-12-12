@@ -15,5 +15,6 @@ const ScreenNames = {
     SettingScreen:'SettingScreen',
     SearchScreen:'SearchScreen',
     DownloadScreen:'DownloadScreen',
+    SignInGoogle:'SignInGoogle',
 };
 export {ScreenNames};

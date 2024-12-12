@@ -9,8 +9,8 @@
       "timeAgo": "2 months ago",
       "channelName": "Peaky Blinders",
       "subscribers": "4M",
-      "like":"12",
-      "disLike":"1"
+      "like":"12K",
+      "disLike":"1K"
   
     },
     {
@@ -23,8 +23,8 @@
       "timeAgo": "3 weeks ago",
       "channelName": "Comedy Nights",
       "subscribers": "4.4M",
-      "like":"120",
-      "disLike":"11"
+      "like":"120K",
+      "disLike":"1.1K"
     },
     {
       "id": 3,
@@ -36,8 +36,8 @@
       "timeAgo": "1 month ago",
       "channelName": "Cooking Time",
       "subscribers": "21M",
-      "like":"1213",
-      "disLike":"13"
+      "like":"121M",
+      "disLike":"13K"
     },
     {
       "id": 4,
@@ -49,8 +49,8 @@
       "timeAgo": "4 months ago",
       "channelName": "Tech Insights",
       "subscribers": "1M",
-      "like":"1112",
-      "disLike":"0"
+      "like":"112M",
+      "disLike":"10K"
     },
     {
       "id": 5,
@@ -62,8 +62,8 @@
       "timeAgo": "5 months ago",
       "channelName": "Wild Adventures",
       "subscribers": "3.1M",
-      "like":"4322",
-      "disLike":"112"
+      "like":"43M",
+      "disLike":"1.2K"
     },
     {
       "id": 6,
@@ -76,7 +76,7 @@
       "channelName": "Comedy Central",
       "subscribers": "4K",
       "like":"543K",
-      "disLike":"43"
+      "disLike":"4K"
     },
     {
       "id": 7,
@@ -88,8 +88,8 @@
       "timeAgo": "1 year ago",
       "channelName": "Bollywood Docs",
       "subscribers": "21.4K",
-      "like":"12K",
-      "disLike":"0"
+      "like":"121K",
+      "disLike":"1.1K"
     },
     {
       "id": 8,
@@ -102,7 +102,7 @@
       "channelName": "Vegan Recipes",
       "subscribers": "4.5K",
       "like":"112K",
-      "disLike":"100"
+      "disLike":"10K"
     },
     {
       "id": 9,
@@ -114,8 +114,8 @@
       "timeAgo": "2 weeks ago",
       "channelName": "Dance Vlog",
       "subscribers": "54K",
-      "like":"123",
-      "disLike":"21"
+      "like":"123M",
+      "disLike":"2.1K"
     },
     {
       "id": 10,
@@ -127,8 +127,8 @@
       "timeAgo": "1 month ago",
       "channelName": "FitLife",
       "subscribers": "67.2K",
-      "like":"1232",
-      "disLike":"12"
+      "like":"12M",
+      "disLike":"1.2K"
     },
     {
       "id": 11,
@@ -140,8 +140,8 @@
       "timeAgo": "6 months ago",
       "channelName": "History Uncovered",
       "subscribers": "47K",
-      "like":"14K",
-      "disLike":"54"
+      "like":"140K",
+      "disLike":"1K"
     },
     {
       "id": 12,
@@ -153,8 +153,8 @@
       "timeAgo": "9 months ago",
       "channelName": "Space Talks",
       "subscribers": "100K",
-      "like":"11K",
-      "disLike":"44"
+      "like":"111K",
+      "disLike":"4.1K"
     },
     {
       "id": 13,
@@ -166,8 +166,8 @@
       "timeAgo": "1 month ago",
       "channelName": "Startup Success",
       "subscribers": "19M",
-      "like":"19K",
-      "disLike":"50"
+      "like":"191K",
+      "disLike":"2K"
     },
     {
       "id": 14,
@@ -180,7 +180,7 @@
       "channelName": "Sports Highlights",
       "subscribers": "39M",
       "like":"1M",
-      "disLike":"59"
+      "disLike":"1.3K"
     },
     {
       "id": 15,
@@ -193,7 +193,7 @@
       "channelName": "Travel Guide 2024",
       "subscribers": "34M",
       "like":"13.3K",
-      "disLike":"24"
+      "disLike":"1.2K"
     },
     {
       "id": 16,
@@ -205,8 +205,8 @@
       "timeAgo": "2 months ago",
       "channelName": "Yoga Essentials",
       "subscribers": "29M",
-      "like":"1.4K",
-      "disLike":"64"
+      "like":"90.4K",
+      "disLike":"1.7K"
     },
     {
       "id": 17,
@@ -218,8 +218,8 @@
       "timeAgo": "7 months ago",
       "channelName": "Science Mysteries",
       "subscribers": "89K",
-      "like":"14.7K",
-      "disLike":"24"
+      "like":"140K",
+      "disLike":"2.1K"
     },
     {
       "id": 18,
@@ -231,8 +231,8 @@
       "timeAgo": "1 month ago",
       "channelName": "Art Masterclass",
       "subscribers": "49K",
-      "like":"144.7K",
-      "disLike":"34"
+      "like":"147M",
+      "disLike":"3.4K"
     },
     {
       "id": 19,
@@ -244,8 +244,8 @@
       "timeAgo": "6 months ago",
       "channelName": "Music Pro",
       "subscribers": "8M",
-      "like":"14.7M",
-      "disLike":"240"
+      "like":"137M",
+      "disLike":"2.1K"
     },
     {
       "id": 20,
@@ -258,7 +258,7 @@
       "channelName": "Finance 101",
       "subscribers": "2.9K",
       "like":"19.7K",
-      "disLike":"200"
+      "disLike":"1.1K"
     },
     {
       "id": 21,
@@ -270,8 +270,8 @@
       "timeAgo": "10 months ago",
       "channelName": "Road Trip Vlogs",
       "subscribers": "8.5M",
-      "like":"14.9K",
-      "disLike":"90"
+      "like":"189K",
+      "disLike":"1.9K"
     },
     {
       "id": 22,
@@ -283,8 +283,8 @@
       "timeAgo": "1 week ago",
       "channelName": "Design Tutorials",
       "subscribers": "9K",
-      "like":"14.7K",
-      "disLike":"24"
+      "like":"197K",
+      "disLike":"2.4K"
     },
     {
       "id": 23,
@@ -296,8 +296,8 @@
       "timeAgo": "1 year ago",
       "channelName": "Tech Talks",
       "subscribers": "53M",
-      "like":"12.6K",
-      "disLike":"200"
+      "like":"126K",
+      "disLike":"1.1K"
     },
     {
       "id": 24,
@@ -309,8 +309,8 @@
       "timeAgo": "3 weeks ago",
       "channelName": "European Adventures",
       "subscribers": "78K",
-      "like":"10.7K",
-      "disLike":"2"
+      "like":"107K",
+      "disLike":"2K"
     },
     {
       "id": 25,
@@ -322,8 +322,8 @@
       "timeAgo": "4 months ago",
       "channelName": "Dance History",
       "subscribers": "42M",
-      "like":"17.7K",
-      "disLike":"92"
+      "like":"17.7M",
+      "disLike":"1.4K"
     }
   ]
   

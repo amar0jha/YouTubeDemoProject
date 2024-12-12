@@ -69,6 +69,27 @@ const Home = () => {
     setSelectedTab(tab);
   };
 
+  const renderItemTab = ({ item, index }:any) => (
+    <TouchableOpacity
+      style={[
+        styles.tabItem,
+        selectedTab === item ? styles.selectedTab : null,
+        index === tabItems.length - 1 && styles.lastTabItem
+      ]}
+      onPress={() => handleTabSelect(item)}
+    >
+      <Text
+        style={[
+          styles.tabText,
+          selectedTab === item ? styles.selectedTabText : null,
+          index === tabItems.length - 1 && styles.lastTabText
+        ]}
+      >
+        {item}
+      </Text>
+    </TouchableOpacity>
+  );
+
   return (
     <View style={styles.container}>
       <HomeHeader youtubeLogo onSearchPress={handleSearchPress} />
@@ -80,26 +101,7 @@ const Home = () => {
           bounces={false}
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.tabsContainer}
-          renderItem={({ item, index }) => (
-            <TouchableOpacity
-              style={[
-                styles.tabItem,
-                selectedTab === item ? styles.selectedTab : null,
-                index === tabItems.length - 1 && styles.lastTabItem
-              ]}
-              onPress={() => handleTabSelect(item)}
-            >
-              <Text
-                style={[
-                  styles.tabText,
-                  selectedTab === item ? styles.selectedTabText : null,
-                  index === tabItems.length - 1 && styles.lastTabText
-                ]}
-              >
-                {item}
-              </Text>
-            </TouchableOpacity>
-          )}
+          renderItem={renderItemTab}
         />
       </View>
       <FlatList

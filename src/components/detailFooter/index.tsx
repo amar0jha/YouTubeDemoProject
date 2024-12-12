@@ -6,12 +6,14 @@ import {
   Image,
   FlatList,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import styles from './style';
 import { Icons } from '../../assets';
 import { useDispatch, useSelector } from 'react-redux';
 import { addSubscription, removeSubscription } from '../../redux/actions/subscriptionActions';
-import { addDownload, removeDownload } from '../../redux/actions/downloadActions';  
+import { addDownload, removeDownload } from '../../redux/actions/downloadActions';
+import Share from 'react-native-share';
 
 const DetailFooter = ({ videoData }: any) => {
   const [videoStates, setVideoStates] = useState({});
@@ -29,6 +31,21 @@ const DetailFooter = ({ videoData }: any) => {
     setIsSubscribed(isAlreadySubscribed);
     setIsBellIconVisible(isAlreadySubscribed);
   }, [subscriptions, id]);
+
+
+  const handleShare = () => {
+    Share.open({
+      message:
+        videoData.videoImage,
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        err && console.log(err);
+      });
+
+  }
 
   const handleSubscribe = () => {
     if (isSubscribed) {
@@ -83,9 +100,9 @@ const DetailFooter = ({ videoData }: any) => {
     const isDownloaded = downloads.some((video) => video.id === id);
 
     if (isDownloaded) {
-      dispatch(removeDownload(videoData)); 
+      dispatch(removeDownload(videoData));
     } else {
-      dispatch(addDownload(videoData)); 
+      dispatch(addDownload(videoData));
     }
 
     setVideoStates((prevState) => ({
@@ -110,13 +127,13 @@ const DetailFooter = ({ videoData }: any) => {
       text: videoStates[id]?.isDisliked ? 'Disliked' : 'Dislike',
       onPress: () => handleAction('isDisliked'),
     },
-    { id: '3', image: Icons.shareIcon, text: 'Share' },
+    { id: '3', image: Icons.shareIcon, text: 'Share', onPress: handleShare },
     { id: '4', image: Icons.shortsUnSelected, text: 'Remix' },
     {
       id: '5',
       image: videoStates[id]?.isDownloaded ? Icons.downloadedIcon : Icons.downloadVideoIcon,
       text: videoStates[id]?.isDownloaded ? 'Downloaded' : 'Download',
-      onPress: handleDownload, 
+      onPress: handleDownload,
     },
     { id: '6', image: Icons.clipIcon, text: 'Clip' },
     {

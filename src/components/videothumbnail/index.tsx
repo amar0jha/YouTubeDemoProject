@@ -6,12 +6,12 @@ import {
   TouchableOpacity,
   ActivityIndicator,
 } from 'react-native';
-import React, {useEffect, useRef, useState} from 'react';
-import {Icons, Images} from '../../assets';
+import React, { useEffect, useRef, useState } from 'react';
+import { Icons, Images } from '../../assets';
 import styles from './style';
 import colors from '../../theme/color';
-import Video, {VideoRef} from 'react-native-video';
-import {useNavigation} from '@react-navigation/native';
+import Video, { VideoRef } from 'react-native-video';
+import { useNavigation } from '@react-navigation/native';
 import Orientation from 'react-native-orientation-locker';
 import SystemNavigationBar from 'react-native-system-navigation-bar';
 import Slider from '@react-native-community/slider';
@@ -54,7 +54,7 @@ const VideosComponent = ({
   // }, [isFullScreen]);
 
   const handleVideo = video => {
-    navigation.navigate('PlayerScreen', {videoData: video});
+    navigation.navigate('PlayerScreen', { videoData: video });
   };
 
   const handleVideoPressed = () => {
@@ -79,7 +79,7 @@ const VideosComponent = ({
   const handleProgress = prog => {
     // console.log('prog',prog)
     setProgress({
-    
+
       currentTime: prog.currentTime,
       playableDuration: prog.playableDuration,
     });
@@ -94,7 +94,7 @@ const VideosComponent = ({
   };
 
   const handleSeek = value => {
-    console.log('seek value',value);
+    console.log('seek value', value);
     if (ref.current) {
       ref.current.seek(value);
     }
@@ -113,10 +113,10 @@ const VideosComponent = ({
 
   const toggleFullScreen = () => {
     setIsFullScreen(!isFullScreen);
-    if(isFullScreen){
+    if (isFullScreen) {
       Orientation.lockToPortrait();
     }
-    else{
+    else {
       Orientation.lockToLandscape();
     }
   }
@@ -125,14 +125,14 @@ const VideosComponent = ({
     <View style={styles.videoContainer}>
       <Video
         style={styles.imageSize}
-        source={{uri: video.videoImage}}
+        source={{ uri: video.videoImage }}
         paused={isPaused}
         muted={ismute}
         resizeMode={resizeMode}
 
         fullscreen={isFullScreen}
         onFullscreenPlayerWillPresent={() => setIsFullScreen(true)}
-        onFullscreenPlayerWillDismiss={() => {setIsBuffering(false); Orientation.lockToPortrait()}}
+        onFullscreenPlayerWillDismiss={() => { setIsBuffering(false); Orientation.lockToPortrait() }}
 
         onLoad={videoInfo => console.log('video Info', videoInfo)}
         onBuffer={bufferValue => {
@@ -153,7 +153,7 @@ const VideosComponent = ({
         ]}>
         {!isBuffering ? (
           <View
-            style={[styles.containerVideo, {opacity: videoPressed ? 1 : 0}]}>
+            style={[styles.containerVideo, { opacity: videoPressed ? 1 : 0 }]}>
             {backward && (
               <TouchableOpacity onPress={() => moveBackward()}>
                 <Image
@@ -164,21 +164,21 @@ const VideosComponent = ({
             )}
             {isPaused
               ? play && (
-                  <TouchableOpacity onPress={() => handlePlayVideo()}>
-                    <Image
-                      source={Icons.playButton}
-                      style={styles.controlBtnPlayPause}
-                    />
-                  </TouchableOpacity>
-                )
+                <TouchableOpacity onPress={() => handlePlayVideo()}>
+                  <Image
+                    source={Icons.playButton}
+                    style={styles.controlBtnPlayPause}
+                  />
+                </TouchableOpacity>
+              )
               : pause && (
-                  <TouchableOpacity onPress={() => handlePauseVideo()}>
-                    <Image
-                      source={Icons.pauseButton}
-                      style={styles.controlBtnPlayPause}
-                    />
-                  </TouchableOpacity>
-                )}
+                <TouchableOpacity onPress={() => handlePauseVideo()}>
+                  <Image
+                    source={Icons.pauseButton}
+                    style={styles.controlBtnPlayPause}
+                  />
+                </TouchableOpacity>
+              )}
             {forward && (
               <TouchableOpacity onPress={() => moveForward()}>
                 <Image
@@ -211,14 +211,14 @@ const VideosComponent = ({
             maximumValue={progress.playableDuration}
             value={progress.currentTime}
             onSlidingComplete={handleSeek}
-            onValueChange={(prog)=>{
+            onValueChange={(prog) => {
               ref.current?.seek(prog)
             }}
             minimumTrackTintColor={colors.red}
             maximumTrackTintColor={colors.lightTransparent}
             thumbTintColor={colors.red}
           />
-         
+
         </View>
       )}
 

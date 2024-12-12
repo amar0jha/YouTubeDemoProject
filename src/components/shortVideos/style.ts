@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
     likeCounts: {
         color: colors.white, 
         top: 5,
+        textAlign:'center',
     },
     icons: {
         padding: 10

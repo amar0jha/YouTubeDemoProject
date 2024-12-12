@@ -12,6 +12,7 @@ import SignInScreen from '../screens/signIn';
 import SignUpScreen from '../screens/signUp';
 import SettingScreen from '../screens/settings';
 import DownloadScreen from '../screens/download';
+import SignInGoogle from '../screens/googlelogin';
 
 const Stack = createNativeStackNavigator();
 
@@ -80,6 +81,12 @@ const RootNavigator = () => {
         <Stack.Screen
           component={DownloadScreen}
           name={ScreenNames.DownloadScreen}
+          options={{headerShown: false}}
+        />
+
+<Stack.Screen
+          component={SignInGoogle}
+          name={ScreenNames.SignInGoogle}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

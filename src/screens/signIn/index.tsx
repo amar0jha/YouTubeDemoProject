@@ -113,12 +113,10 @@ return (
 
         </View>
 
-        <View style={styles.googleContainer}>
+        <TouchableOpacity style={styles.googleContainer} onPress={()=> navigation.navigate('SignInGoogle')}>
           <Image source={Icons.googleLogin} style={styles.googleLogo} />
-          <TouchableOpacity>
             <Text style={styles.googleText}>{strings.GoogleLogin}</Text>
-          </TouchableOpacity>
-        </View>
+        </TouchableOpacity>
 
         <View style={styles.dividerContainer}>
           <View style={styles.lineView} />

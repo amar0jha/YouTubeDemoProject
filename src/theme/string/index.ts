@@ -23,5 +23,7 @@ const strings = {
     SignUp:'Sign up',
     All:'All',
     NoSubscribers:'No subscribed channels yet.',
+    signInGoogle:'Log in with Google',
+    // SignUp:'SignUp'
     }
     export default strings;
