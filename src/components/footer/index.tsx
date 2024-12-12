@@ -53,7 +53,7 @@ const FooterItems = ({ video, needProfileIcon, needMoreIcon }: any) => {
             {video.description}
           </Text>
           <View style={styles.timeAndView}>
-            <View style={{ flexDirection: 'row' }}>
+            <View style={styles.containerfootdetail}>
               <Text numberOfLines={2}>{`${video.channelName} . ${video.views} . ${video.timeAgo}`}</Text>
             </View>
           </View>

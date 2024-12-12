@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
       },
       tabItem: {
         marginRight: 14,
-        backgroundColor: '#E5E5E5',
+        backgroundColor: colors.lightgrey,
         borderRadius: 8,
       },
       tabText: {
@@ -26,10 +26,10 @@ const styles = StyleSheet.create({
         fontWeight: '700',
       },
       selectedTab: {
-        backgroundColor: 'black',
+        backgroundColor: colors.black,
       },
       selectedTabText: {
-        color: 'white',
+        color: colors.white,
       },
       lastTabItem: {
         backgroundColor: colors.white, 
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         paddingVertical: 9,
         paddingHorizontal: 11,
         fontWeight: '700',
-        color:'#0457db',
+        color:colors.lightBlue,
       },
 })
 export default styles

@@ -16,6 +16,7 @@ import {useSelector} from 'react-redux';
 import ThumbnailComponent from '../../components/thumbnail';
 import FooterItems from '../../components/footer';
 import DataCard from '../../components/dataCard';
+import strings from '../../theme/string';
 
 const Profile = () => {
   const navigation = useNavigation();
@@ -84,15 +85,7 @@ const Profile = () => {
     </TouchableOpacity>
   );
 
-  // const renderItemHist = ({ item }: any) => (
-  //   <View style={{height:'50%',width:'45%',}}>
-  //   {/* <HomeVideoItems video={item} needProfileIcon needMoreIcon /> */}
-  //   <ThumbnailComponent video={item} styles={styles.containerImage}/>
-  //   <FooterItems video={item} needMoreIcon />
-  //   </View>
-  // );
-  // const handleKeyExtractor = (item: any) => item.id.toString();
-
+ 
   const renderItemHist = ({item}: any) => (
     <View style={styles.historyItemContainer}>
       <ThumbnailComponent video={item} styles={styles.containerImage} />
@@ -128,18 +121,18 @@ const Profile = () => {
           <View style={styles.channelNameContainer}>
             <View>
               <Text numberOfLines={1} style={styles.nameText}>
-                Amar Nath Ojha
+                {strings.ProfileName}
               </Text>
             </View>
             <View style={styles.channelIdContainer}>
               <View>
                 <Text numberOfLines={1} style={styles.idText}>
-                  @Amar_Ojha
+                  {strings.UserId}
                 </Text>
               </View>
               <View style={styles.lineView}></View>
               <View>
-                <Text style={styles.channelText}>View channel {'>'} </Text>
+                <Text style={styles.channelText}>{strings.ViewChannel} {'>'} </Text>
               </View>
             </View>
           </View>
@@ -156,24 +149,15 @@ const Profile = () => {
         />
 
         <View style={styles.listHeaders}>
-          <Text style={styles.listHeading}>History</Text>
+          <Text style={styles.listHeading}>{strings.History}</Text>
           <TouchableOpacity onPress={handleViewAll}>
             <View style={styles.viewAllBg}>
-              <Text style={styles.viewAll}>View all</Text>
+              <Text style={styles.viewAll}>{strings.ViewAll}</Text>
             </View>
           </TouchableOpacity>
         </View>
 
-        {/* <View>
-      <FlatList
-          data={history}
-          renderItem={renderItemHist}
-          bounces={false}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          keyExtractor={handleKeyExtractor}
-        />
-      </View> */}
+       
 
         <FlatList
           data={history}
@@ -187,7 +171,6 @@ const Profile = () => {
           // contentContainerStyle={styles.historyFlatlistContainer}
         />
 
-        {/* <DataCard /> */}
 
         <FlatList
           data={dataCardList}

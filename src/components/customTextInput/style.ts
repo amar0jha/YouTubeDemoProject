@@ -1,10 +1,11 @@
 import { StyleSheet } from "react-native";
+import colors from "../../theme/color";
 
 const styles = StyleSheet.create({
     inputContainer: {
       flexDirection: 'row',
       alignItems: 'center',
-      backgroundColor: '#f1f1f1',
+      backgroundColor: colors.cloudcolor,
       borderRadius: 20,
       paddingHorizontal: 15,
       height: 40,
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
     input: {
       flex: 1,
       fontSize: 16,
-      color: '#333',
+      color: colors.darkgrey,
     },
   });
   export default styles

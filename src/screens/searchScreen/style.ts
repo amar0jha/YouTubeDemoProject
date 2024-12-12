@@ -1,10 +1,11 @@
 import { StyleSheet } from "react-native";
+import colors from "../../theme/color";
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
       paddingHorizontal: 10,
-      backgroundColor: '#fff',
+      backgroundColor: colors.white,
     },
     header: {
       flexDirection: 'row',
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
     description: {
       fontWeight: 'bold',
       fontSize: 14,
-      color: '#000',
+      color: colors.black,
       flexWrap: 'nowrap', 
       overflow: 'hidden',
       // textOverflow: 'ellipsis',  

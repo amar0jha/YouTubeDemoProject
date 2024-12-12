@@ -9,6 +9,7 @@ import styles from './style';
 import {Icons} from '../../assets';
 import ShortsVideoComponent from '../../components/shortsVideo';
 import {useNavigation} from '@react-navigation/native';
+import strings from '../../theme/string';
 
 const Shorts = () => {
   const navigation=useNavigation();
@@ -20,9 +21,9 @@ const Shorts = () => {
     <View style={styles.container}>
       <View style={styles.topView}>
         <Text style={styles.topViewText}>
-          Shorts
+         {strings.ShortsScreen}
         </Text>
-        <View style={{flexDirection:'row'}}>
+        <View style={styles.searchContainer}>
         <TouchableOpacity onPress={handleSearchPress}>
         <Image source={Icons.searchIcon}
           style={styles.headerImage}

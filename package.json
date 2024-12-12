@@ -28,7 +28,8 @@
     "react-native-system-navigation-bar": "^2.6.4",
     "react-native-video": "^6.7.0",
     "react-redux": "^9.1.2",
-    "redux": "^5.0.1"
+    "redux": "^5.0.1",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

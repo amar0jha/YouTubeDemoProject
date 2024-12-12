@@ -1,25 +1,25 @@
 import React from 'react';
-import { View, Text, SafeAreaView, StyleSheet } from 'react-native';
-import RootNavigator from './src/navigator';
+import { View, SafeAreaView, StyleSheet, Text } from 'react-native';
 import { Provider } from 'react-redux';
-import store from './src/redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
+import RootNavigator from './src/navigator';
+import { store, persistor } from './src/redux/store';
 
 const App = () => {
   return (
-    // <View style={styles.container}>
-    //   <RootNavigator />
-    // </View>
-    <Provider store={store}> 
-     <RootNavigator />
-      </Provider>
-  )
-}
-export default App
+    <Provider store={store}>
+      <PersistGate loading={<SafeAreaView><Text>Loading...</Text></SafeAreaView>} persistor={persistor}>
+        <RootNavigator />
+      </PersistGate>
+    </Provider>
+  );
+};
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:'red'
+    backgroundColor: 'red',
   },
-
-})
+});

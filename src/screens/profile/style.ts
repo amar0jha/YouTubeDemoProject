@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   },
 
   listBg: {
-    backgroundColor: '#E5E5E5',
+    backgroundColor: colors.lightgrey,
     flexDirection: 'row',
     borderRadius: 10,
     paddingHorizontal: 8,
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     paddingVertical: 8,
     paddingHorizontal: 14,
-    borderColor: '#E5E5E5',
+    borderColor: colors.lightgrey,
     borderWidth: 1,
   },
 
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   bellIconBg: {
-    backgroundColor: '#E5E5E5',
+    backgroundColor: colors.lightgrey,
     flexDirection: 'row',
     borderRadius: 30,
     paddingVertical: 8,

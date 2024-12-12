@@ -2,7 +2,7 @@
     {
       "id": 1,
       "videoImage": "https://vjs.zencdn.net/v/oceans.mp4",
-      "videoTime": "1:45:31",
+      "videoTime": "00:46",
       "profileImage": "https://i.pinimg.com/564x/b7/35/c1/b735c1bfcc3c08157f22495bc76b855e.jpg",
       "description": "Peaky Blinders | Season 1 | ep 01 ft. @CillianMurphy @TommyShelby @PeakyBlindersGang explosive crime drama, power struggles, betrayal, and family drama in post-WWI Birmingham",
       "views": "16M Views",
@@ -16,7 +16,7 @@
     {
       "id": 2,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-      "videoTime": "0:56:12",
+      "videoTime": "00:15",
       "profileImage": "https://i.pinimg.com/564x/ac/64/6d/ac646da66ec4389acebd0eafd595f4ad.jpg",
       "description": "Comedy Night with @Rajeev and @Mansi featuring hilarious skits and surprise guests. A fun night for everyone.",
       "views": "25M Views",
@@ -29,7 +29,7 @@
     {
       "id": 3,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      "videoTime": "1:22:45",
+      "videoTime": "10:53",
       "profileImage": "https://i.pinimg.com/564x/92/98/29/9298299fb18c4bd7ba1e56e606c12aee.jpg",
       "description": "The Best Cooking Show | Season 4 Episode 10. Featuring guest chef @AnitaRoy",
       "views": "12M Views",
@@ -42,7 +42,7 @@
     {
       "id": 4,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      "videoTime": "0:48:20",
+      "videoTime": "09:56",
      "profileImage": "https://i.pinimg.com/564x/57/f2/d4/57f2d421ccaa1acb73533c8cacd7b098.jpg",
     "description": "Tech Talk | Episode 5 - Future of AI and Machine Learning",
       "views": "8M Views",
@@ -55,7 +55,7 @@
     {
       "id": 5,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-      "videoTime": "2:10:05",
+      "videoTime": "00:15",
      "profileImage": "https://i.pinimg.com/564x/59/a0/9b/59a09b02e73f2c9220b1ba5c7a940950.jpg",
     "description": "Exploring the Wild: Season 2 | Jungle Adventures with @MananDesai",
       "views": "30M Views",
@@ -68,7 +68,7 @@
     {
       "id": 6,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-      "videoTime": "0:58:10",
+      "videoTime": "01:00",
       "profileImage": "https://i.pinimg.com/564x/ef/ee/11/efee1101dc42f70ad7ca92dd95b4decf.jpg",
       "description": "Stand-up Comedy Special | Featuring @ComedianSamay",
       "views": "20M Views",
@@ -81,7 +81,7 @@
     {
       "id": 7,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-      "videoTime": "1:32:56",
+      "videoTime": ":00:15",
       "profileImage": "https://i.pinimg.com/564x/3d/4e/25/3d4e258800288b8c0c10a96c47822ec1.jpg",
       "description": "The History of Bollywood | In-depth Documentary with @Rajeev",
       "views": "5M Views",
@@ -94,7 +94,7 @@
     {
       "id": 8,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-      "videoTime": "1:20:30",
+      "videoTime": "14:47",
       "profileImage": "https://i.pinimg.com/564x/2a/b2/38/2ab2380a7d4dedcf3e988e220a71b102.jpg",
       "description": "Gourmet Cooking with Chef John: Vegan Recipes for Beginners",
       "views": "3M Views",
@@ -107,7 +107,7 @@
     {
       "id": 9,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-      "videoTime": "1:05:45",
+      "videoTime": "09:54",
       "profileImage": "https://i.pinimg.com/564x/b9/3b/91/b93b913e1d2b5937eed84cf73110937f.jpg",
       "description": "A Day in the Life of a Professional Dancer | Dance Vlog with @Alisha",
       "views": "7M Views",
@@ -120,7 +120,7 @@
     {
       "id": 10,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
-      "videoTime": "1:15:20",
+      "videoTime": "12:14",
       "profileImage": "https://i.pinimg.com/564x/71/4e/63/714e6334902e45c06244a47984e1daab.jpg",
       "description": "Fitness Tips for Busy People | Workout Routines for Beginners",
       "views": "10M Views",
@@ -133,7 +133,7 @@
     {
       "id": 11,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-      "videoTime": "0:42:33",
+      "videoTime": "00:47",
       "profileImage": "https://i.pinimg.com/564x/db/bd/7d/dbbd7daad09de5efbd35f148e13254b9.jpg",
       "description": "Exploring Ancient Ruins | The Lost City of Petra Documentary",
       "views": "13M Views",
@@ -146,7 +146,7 @@
     {
       "id": 12,
       "videoImage": "https://videos.pexels.com/video-files/8474642/8474642-hd_1920_1080_30fps.mp4",
-      "videoTime": "1:50:25",
+      "videoTime": "00:10",
       "profileImage": "https://i.pinimg.com/736x/43/33/1d/43331d195ddd5ab9cbd8223a86c76200.jpg",
       "description": "The Future of Space Exploration | A Conversation with @NeilDegrasse",
       "views": "18M Views",
@@ -159,7 +159,7 @@
     {
       "id": 13,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-      "videoTime": "1:10:11",
+      "videoTime": "01:00",
       "profileImage": "https://i.pinimg.com/564x/13/94/21/1394213d58f56294eea7dc35e9f105b6.jpg",
       "description": "How to Build a Startup | Interview with @EntrepreneurSiddhi",
       "views": "4M Views",
@@ -172,7 +172,7 @@
     {
       "id": 14,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-      "videoTime": "2:05:34",
+      "videoTime": "00:15",
       "profileImage": "https://i.pinimg.com/564x/5b/33/78/5b337873be0935cb85f0a028b1c7d4de.jpg",
       "description": "The Big Match | Highlights from the Final Game of the Season",
       "views": "50M Views",
@@ -185,7 +185,7 @@
     {
       "id": 15,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-      "videoTime": "1:12:17",
+      "videoTime": "14:47",
       "profileImage": "https://i.pinimg.com/564x/72/0d/d7/720dd7688cda969d5741066e981d7de5.jpg",
       "description": "Ultimate Travel Guide | Best Destinations in 2024",
       "views": "3M Views",
@@ -198,7 +198,7 @@
     {
       "id": 16,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-      "videoTime": "0:35:10",
+      "videoTime": "09:54",
       "profileImage": "https://i.pinimg.com/564x/8f/64/82/8f64823cc88669142ac112e7b7a61c76.jpg",
       "description": "Yoga for Beginners | The Best Poses for Flexibility and Strength",
       "views": "9M Views",
@@ -211,7 +211,7 @@
     {
       "id": 17,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
-      "videoTime": "1:02:30",
+      "videoTime": "12:14",
       "profileImage": "https://i.pinimg.com/736x/93/27/00/9327008da3d99bcb8d871226e2035eb0.jpg",
       "description": "Mystery Science | Discovering the Unknown with @SaraLoren",
       "views": "15M Views",
@@ -224,7 +224,7 @@
     {
       "id": 18,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      "videoTime": "1:55:10",
+      "videoTime": "09:56",
       "profileImage": "https://i.pinimg.com/564x/83/47/16/83471650d1513b40f8eb23c32ec4e09e.jpg",
       "description": "The Art of Painting | A Masterclass with @ArtistSanjay",
       "views": "10M Views",
@@ -237,7 +237,7 @@
     {
       "id": 19,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-      "videoTime": "1:35:20",
+      "videoTime": "00:15",
       "profileImage": "https://i.pinimg.com/564x/a1/18/3a/a1183a55073194e0a3b654acd8c0aca7.jpg",
       "description": "Music Production Tips | Learn How to Mix Your Tracks Like a Pro",
       "views": "22M Views",
@@ -250,7 +250,7 @@
     {
       "id": 20,
       "videoImage": "https://videos.pexels.com/video-files/8474642/8474642-hd_1920_1080_30fps.mp4",
-      "videoTime": "1:05:00",
+      "videoTime": "00:10",
       "profileImage": "https://i.pinimg.com/564x/12/d4/b9/12d4b9f0c04adb9c01dd616e313241d6.jpg",
       "description": "Personal Finance 101 | Tips for Managing Your Money Effectively",
       "views": "5M Views",
@@ -263,7 +263,7 @@
     {
       "id": 21,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-      "videoTime": "1:10:45",
+      "videoTime": "00:15",
       "profileImage": "https://i.pinimg.com/564x/73/40/63/7340636d9bc19af8acb231c59ea8668f.jpg",
       "description": "Travel Vlog: A Road Trip Across India | Journey with @Vikas",
       "views": "8M Views",
@@ -276,7 +276,7 @@
     {
       "id": 22,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-      "videoTime": "1:25:30",
+      "videoTime": "14:47",
       "profileImage": "https://i.pinimg.com/564x/00/44/cc/0044cc4769e704b12fd8952243c1f813.jpg",
       "description": "How to Create Stunning Graphics with Adobe Photoshop",
       "views": "15M Views",
@@ -289,7 +289,7 @@
     {
       "id": 23,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-      "videoTime": "0:59:14",
+      "videoTime": "09:54",
       "profileImage": "https://i.pinimg.com/564x/aa/04/4c/aa044ce64c602dc46b63099aa48638db.jpg",
       "description": "Understanding Quantum Computing | A Deep Dive into the Future of Tech",
       "views": "18M Views",
@@ -302,7 +302,7 @@
     {
       "id": 24,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-      "videoTime": "1:30:12",
+      "videoTime": "09:54",
       "profileImage": "https://i.pinimg.com/736x/cc/4a/ed/cc4aed998ec478906ed1df1268553538.jpg",
       "description": "The Best Places to Visit in Europe | Travel Vlog with @Vikram",
       "views": "13M Views",
@@ -315,7 +315,7 @@
     {
       "id": 25,
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      "videoTime": "2:05:12",
+      "videoTime": "10:53",
       "profileImage": "https://i.pinimg.com/564x/a1/83/a4/a183a46fcf5da179beb2b1d1ed1111c3.jpg",
       "description": "The Evolution of Dance | A History of Dance Styles Around the World",
       "views": "10M Views",

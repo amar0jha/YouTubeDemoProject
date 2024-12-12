@@ -12,7 +12,7 @@ const styles = StyleSheet.create ({
     },
     bgColor: {
         flex: 1,
-        backgroundColor: '#FFFFFF',
+        backgroundColor: colors.white,
       },
       marginSide:{
         marginHorizontal:20,
@@ -44,9 +44,7 @@ const styles = StyleSheet.create ({
         color:colors.black,
         // textAlignVertical:'center',
         textAlign:'center',
-        // justifyContent:'center',
-        // alignItems:'center',
-        // backgroundColor:'grey',
+       
     },
 })
 

@@ -34,6 +34,9 @@ const styles = StyleSheet.create({
        width:'80%'
     // justifyContent: 'flex-start', 
   },
+  containerfootdetail:{
+     flexDirection: 'row' 
+  },
   iconSize: {
     width: 30,
     height: 30,

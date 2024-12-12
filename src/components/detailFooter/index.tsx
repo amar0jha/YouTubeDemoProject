@@ -101,13 +101,13 @@ const DetailFooter = ({ videoData }: any) => {
     {
       id: '1',
       image: videoStates[id]?.isLiked ? Icons.likedVideoIcon : Icons.thumbsUpIcon,
-      text: 'Like',
+      text: videoStates[id]?.isLiked ? 'Liked' : 'Like',
       onPress: () => handleAction('isLiked'),
     },
     {
       id: '2',
       image: videoStates[id]?.isDisliked ? Icons.disLikedVideoIcon : Icons.thumbsDownIcon,
-      text: 'Dislike',
+      text: videoStates[id]?.isDisliked ? 'Disliked' : 'Dislike',
       onPress: () => handleAction('isDisliked'),
     },
     { id: '3', image: Icons.shareIcon, text: 'Share' },
@@ -122,7 +122,7 @@ const DetailFooter = ({ videoData }: any) => {
     {
       id: '7',
       image: videoStates[id]?.isSaved ? Icons.saveVideoIcon : Icons.savePlaylistIcon,
-      text: 'Save',
+      text: videoStates[id]?.isSaved ? 'Saved' : 'Save',
       onPress: () => handleAction('isSaved'),
     },
     { id: '8', image: Icons.reportIcon, text: 'Report' },

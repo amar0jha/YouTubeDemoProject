@@ -21,13 +21,13 @@ const styles = StyleSheet.create({
     forgotPass: {
       marginTop: 14,
      
-      color: '#3797EF',
+      color: colors.darkBlue,
       alignItems:'flex-end',
       top:8
     },
     forgotPassText: {
       fontSize: 15,
-      color: '#f52d05',
+      color: colors.redColor,
     },
     googleContainer: {
       flexDirection: 'row',
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     },
     signupText: {
       fontSize: 16,
-      color:'#f52d05'
+      color:colors.redColor,
     },
     error: {
       color: 'red',
@@ -84,14 +84,14 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       width: '100%',
       height: 45,
-      borderColor: '#ccc',
+      borderColor: colors.darkCloudColor,
       borderRadius: 10,
       paddingHorizontal: 10,
       fontSize: 16,
     },
    
     errorText: {
-      color: 'red',
+      color: colors.red,
       fontSize: 12,
       marginTop: 8,
     },

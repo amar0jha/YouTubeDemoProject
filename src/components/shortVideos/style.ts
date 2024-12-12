@@ -4,7 +4,7 @@ import colors from "../../theme/color";
 const styles = StyleSheet.create({
     mainContainer: {
         height: Dimensions.get('window').height, 
-        bottom: 80
+        bottom: 80,
     },
     container: {
         width: Dimensions.get('window').width,
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         width: 32,
         height: 32,
         borderRadius: 50,
-        backgroundColor: 'white',
+        backgroundColor:colors.white,
         margin: 10,
     },
     img: {
@@ -50,11 +50,11 @@ const styles = StyleSheet.create({
         borderRadius: 50,
     },
     channelName: {
-        color: 'white', 
+        color:colors.white,
         fontSize: 16
     },
     captions: {
-        color: 'white', 
+        color:colors.white,
         fontSize: 14, 
         marginStart: 10,
         marginEnd:25,
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
         padding: 10
     },
     audioText: {
-        color: 'white'
+        color:colors.white,
     },
     iconsContainer: {
         position: 'absolute',
@@ -74,10 +74,10 @@ const styles = StyleSheet.create({
     likeImg: {
         height: 23, 
         width: 23, 
-        tintColor: 'white'
+        tintColor: colors.white,
     },
     likeCounts: {
-        color: 'white', 
+        color: colors.white, 
         top: 5,
     },
     icons: {
@@ -86,26 +86,26 @@ const styles = StyleSheet.create({
     commentsImg: {
         width: 24,
         height: 25,
-        tintColor: 'white',
+        tintColor: colors.white,
         resizeMode: 'contain',
     },
     shareImg: {
         width: 24,
         height: 25,
-        tintColor: 'white',
+        tintColor: colors.white,
         resizeMode: 'contain',
     },
     threeDots: {
         width: 25,
         height: 25,
-        tintColor: 'white',
+        tintColor: colors.white,
     },
     audio: {
         width: 30,
         height: 30,
         borderRadius: 10,
         borderWidth: 2,
-        borderColor: 'white',
+        borderColor: colors.white,
         margin: 10,
     },
     audioImg: {

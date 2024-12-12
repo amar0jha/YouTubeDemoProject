@@ -12,10 +12,10 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16,
       },
       selectedTab: {
-        backgroundColor: 'black',
+        backgroundColor: colors.black,
       },
       selectedTabText: {
-        color: 'white',
+        color: colors.white,
       },
       subscriptionsContainer: {
         paddingVertical: 16,
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
       thumbnail: {
         width: 64,
         height: 64,
-        backgroundColor: 'red',
+        // backgroundColor: 'red',
         borderRadius: 32,
       },
       subscriptionName: {
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         width: 64,
       },
       allText: {
-        color: '#0457db',
+        color: colors.lightBlue,
         fontSize: 16,
         fontWeight: 'bold',
         marginHorizontal: 12,
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
       },
       tabItem: {
         marginRight: 14,
-        backgroundColor: '#E5E5E5',
+        backgroundColor: colors.lightgrey,
         borderRadius: 8,
       },
       tabText: {

@@ -6,6 +6,7 @@ import styles from './style';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 import { addSubscription, removeSubscription } from '../../redux/actions/subscriptionActions';
+import strings from '../../theme/string';
 
 const SingleShortVideo = ({ item, index, currentIndex ,likeCounts,  disliked,   dislikeCounts, liked, onLikePress, onDislikePress }: any) => {
 
@@ -102,7 +103,7 @@ const SingleShortVideo = ({ item, index, currentIndex ,likeCounts,  disliked,   
               {item.description}
             </Text>
             <View style={styles.music}>
-              <Text style={styles.audioText}>Songs Audio</Text>
+              <Text style={styles.audioText}>{strings.OriginalAudio}</Text>
             </View>
           </View>
         </View>

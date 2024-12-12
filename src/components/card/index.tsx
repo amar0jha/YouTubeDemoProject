@@ -9,12 +9,6 @@ import ThumbnailComponent from '../thumbnail';
 const HomeVideoItems = ({video,onPress,needProfileIcon,needMoreIcon}:any) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
-      {/* <View style={styles.containerImage}>
-      <Image source={{ uri: video.videoImage }} style={styles.imageSize} />
-        <View style={styles.videoTimeContainer}>
-          <Text style={styles.timeText}>{video.videoTime}</Text>
-        </View>
-      </View> */}
       <ThumbnailComponent video={video} time styles={styles.containerImage1}/>
       <FooterItems video={video} needProfileIcon={needProfileIcon} needMoreIcon={needMoreIcon}/>
     </TouchableOpacity>

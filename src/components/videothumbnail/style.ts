@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     position: 'absolute', 
     bottom: 10, 
     right: 10, 
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+    backgroundColor: colors.transparent, 
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 5,
@@ -20,6 +20,9 @@ const styles = StyleSheet.create({
     color:colors.white,
     fontWeight:'400',
     fontSize:16,
+  },
+  videoContainer:{
+    flex:1
   },
   imageSize: {
     width: Dimensions.get('window').width,
@@ -43,6 +46,9 @@ loader: {
     top: '50%',
     left: '50%',
     transform: [{ translateX: -25 }, { translateY: -25 }], 
+  },
+  containerVideo:{
+    flexDirection:'row',
   },
   controlBtnStyle:{
     width:40,
@@ -108,6 +114,8 @@ fullScreenImage: {
 //   height: 40,
 //   tintColor: colors.white,
 // },
+
+
 });
 
 export default styles;

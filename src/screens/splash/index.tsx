@@ -9,25 +9,27 @@ const SplashScreen = () => {
   const navigation:any = useNavigation();
   const [isVisible, setIsVisible] = useState(true);
 
+  const checkLoginStatus = async () => {
+    const userToken = await AsyncStorage.getItem('userToken');
+    if (userToken) {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'BottomTab' }],
+      });
+    } else {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'SignInScreen' }],
+      });
+    }
+  };
+
   useEffect(() => {
-    const checkLoginStatus = async () => {
-      const userToken = await AsyncStorage.getItem('userToken');
-      if (userToken) {
-        navigation.reset({
-          index: 0,
-          routes: [{ name: 'BottomTab' }],
-        });
-      } else {
-        navigation.reset({
-          index: 0,
-          routes: [{ name: 'SignInScreen' }],
-        });
-      }
-    };
     setTimeout(() => {
       checkLoginStatus();
     }, 1000);
   }, [navigation])
+  
   return (
     <View style={styles.container}>
       <Image

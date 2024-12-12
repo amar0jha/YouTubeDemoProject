@@ -45,13 +45,13 @@ const VideosComponent = ({
   //     // SystemNavigationBar.fullScreen(true);
   // }, []);
 
-  useEffect(() => {
-    if (isFullScreen) {
-      Orientation.lockToLandscape();
-    } else {
-      Orientation.unlockAllOrientations();
-    }
-  }, [isFullScreen]);
+  // useEffect(() => {
+  //   if (isFullScreen) {
+  //     Orientation.lockToLandscape();
+  //   } else {
+  //     Orientation.unlockAllOrientations();
+  //   }
+  // }, [isFullScreen]);
 
   const handleVideo = video => {
     navigation.navigate('PlayerScreen', {videoData: video});
@@ -77,7 +77,9 @@ const VideosComponent = ({
   };
 
   const handleProgress = prog => {
+    // console.log('prog',prog)
     setProgress({
+    
       currentTime: prog.currentTime,
       playableDuration: prog.playableDuration,
     });
@@ -92,30 +94,46 @@ const VideosComponent = ({
   };
 
   const handleSeek = value => {
+    console.log('seek value',value);
     if (ref.current) {
       ref.current.seek(value);
     }
   };
 
+  // const toggleFullScreen = () => {
+  //   if (isFullScreen) {
+  //     Orientation.unlockAllOrientations();
+  //     SystemNavigationBar.navigationShow();
+  //   } else {
+  //     Orientation.lockToLandscape();
+  //     SystemNavigationBar.navigationHide();
+  //   }
+  //   setIsFullScreen(!isFullScreen);
+  // };
+
   const toggleFullScreen = () => {
-    if (isFullScreen) {
-      Orientation.unlockAllOrientations();
-      SystemNavigationBar.navigationShow();
-    } else {
-      Orientation.lockToLandscape();
-      SystemNavigationBar.navigationHide();
-    }
     setIsFullScreen(!isFullScreen);
-  };
+    if(isFullScreen){
+      Orientation.lockToPortrait();
+    }
+    else{
+      Orientation.lockToLandscape();
+    }
+  }
 
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.videoContainer}>
       <Video
         style={styles.imageSize}
         source={{uri: video.videoImage}}
         paused={isPaused}
         muted={ismute}
         resizeMode={resizeMode}
+
+        fullscreen={isFullScreen}
+        onFullscreenPlayerWillPresent={() => setIsFullScreen(true)}
+        onFullscreenPlayerWillDismiss={() => {setIsBuffering(false); Orientation.lockToPortrait()}}
+
         onLoad={videoInfo => console.log('video Info', videoInfo)}
         onBuffer={bufferValue => {
           setIsBuffering(bufferValue.isBuffering);
@@ -134,7 +152,8 @@ const VideosComponent = ({
           },
         ]}>
         {!isBuffering ? (
-          <View style={{opacity: videoPressed ? 1 : 0, flexDirection: 'row'}}>
+          <View
+            style={[styles.containerVideo, {opacity: videoPressed ? 1 : 0}]}>
             {backward && (
               <TouchableOpacity onPress={() => moveBackward()}>
                 <Image
@@ -182,7 +201,8 @@ const VideosComponent = ({
           <View style={styles.progressTimeContainer}>
             <Text style={styles.progressTimeText}>
               {formatTime(progress.currentTime)} /{' '}
-              {formatTime(progress.playableDuration)}
+              {/* {formatTime(progress.playableDuration)} */}
+              {video.videoTime}
             </Text>
           </View>
           <Slider
@@ -191,21 +211,29 @@ const VideosComponent = ({
             maximumValue={progress.playableDuration}
             value={progress.currentTime}
             onSlidingComplete={handleSeek}
+            onValueChange={(prog)=>{
+              ref.current?.seek(prog)
+            }}
             minimumTrackTintColor={colors.red}
             maximumTrackTintColor={colors.lightTransparent}
             thumbTintColor={colors.red}
           />
+         
         </View>
       )}
 
-     { fullScreen && (<TouchableOpacity onPress={toggleFullScreen} style={styles.fullScreenBtn}>
-        <Image
-          source={
-            isFullScreen ? Icons.exitFullScreenButton : Icons.fullScreenButton
-          }
-          style={styles.fullExitBtn}
-        />
-      </TouchableOpacity>)}
+      {fullScreen && (
+        <TouchableOpacity
+          onPress={toggleFullScreen}
+          style={styles.fullScreenBtn}>
+          <Image
+            source={
+              isFullScreen ? Icons.exitFullScreenButton : Icons.fullScreenButton
+            }
+            style={styles.fullExitBtn}
+          />
+        </TouchableOpacity>
+      )}
 
       {time && (
         <View style={styles.videoTimeContainer}>

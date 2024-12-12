@@ -1,11 +1,32 @@
-// import { StyleSheet } from "react-native";
+// import { Dimensions, StyleSheet } from "react-native";
 // import colors from "../../theme/color";
 
-// const styles=StyleSheet.create({
-// container:{
-//     flex:1,
-//     backgroundColor:colors.black,
-// },
+// const styles = StyleSheet.create({
+//   containerImage: {
+//     height: 300, 
+//     width: '100%',
+//     position: 'relative', 
+//   },
+//   videoTimeContainer: {
+//     position: 'absolute', 
+//     bottom: 10, 
+//     right: 10, 
+//     backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+//     paddingHorizontal: 8,
+//     paddingVertical: 4,
+//     borderRadius: 5,
+//   },
+//   timeText:{
+//     color:colors.white,
+//     fontWeight:'400',
+//     fontSize:16,
+//   },
+//   imageSize: {
+//     width: Dimensions.get('window').width,
+//     height: '100%',
+//     resizeMode: 'stretch', 
+//   },
+
 // backgroundVideo:{
 //     width:'100%',
 //     height:'100%',
@@ -34,5 +55,59 @@
 //     tintColor:colors.white,
 //     marginHorizontal:10,
 //   },
-// })
+
+
+//   progressBarContainer: {
+//     position: 'relative',
+//     bottom: 40,
+//     // left: 10,
+//     // right: 10,
+//     width: '100%',
+//     justifyContent: 'center',
+// },
+// progressBar: {
+//     width: '100%',
+//     height: 40,
+// },
+// progressTimeContainer: {
+//     flexDirection: 'row',
+//     justifyContent: 'space-between',
+//     marginTop: 1,
+// },
+// progressTimeText: {
+//     color: colors.white,
+//     fontSize: 14,
+// },
+// fullScreenBtn: {
+//   position: 'absolute',
+//   bottom: 20,
+//   right: 20,
+//   zIndex: 10,
+// },
+// fullExitBtn:{
+//   width:20,
+//   height:20,
+//   tintColor:colors.white,
+// },
+
+// fullScreenImage: {
+//   width: '100%',
+//   height: '100%',
+//   resizeMode: 'cover',
+// },
+
+// // fullScreenBtn: {
+// //   position: 'absolute',
+// //   bottom: 20,
+// //   right: 20,
+// //   zIndex: 10,
+// // },
+
+// // fullExitBtn: {
+// //   width: 40,
+// //   height: 40,
+// //   tintColor: colors.white,
+// // },
+// });
+
 // export default styles;

@@ -5,6 +5,7 @@ import styles from './style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { Icons } from '../../assets';
+import strings from '../../theme/string';
 
 const SettingScreen = () => {
   const navigation: any = useNavigation();
@@ -85,7 +86,7 @@ const SettingScreen = () => {
         <TouchableOpacity style={styles.backButtonContainer} onPress={handleBack}>
           <Image source={Icons.backIcons} style={styles.backButtonIcon} />
         </TouchableOpacity>
-        <Text style={styles.sectionHeaderText}>Settings</Text>
+        <Text style={styles.sectionHeaderText}>{strings.Settings}</Text>
       </View>
 
       <SectionList
@@ -98,7 +99,7 @@ const SettingScreen = () => {
       />
       
       <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
-        <Text style={styles.logoutButton}>Logout</Text>
+        <Text style={styles.logoutButton}>{strings.Logout}</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );

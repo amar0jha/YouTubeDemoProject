@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   bellIconBg: {
-    backgroundColor: '#E5E5E5',
+    backgroundColor: colors.lightgrey,
     flexDirection: 'row',
     borderRadius: 30,
     paddingVertical: 8,

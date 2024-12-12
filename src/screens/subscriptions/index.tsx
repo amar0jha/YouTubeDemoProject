@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import HomeHeader from '../../components/header';
 import HomeVideoItems from '../../components/card';
 import styles from './style';
+import strings from '../../theme/string';
 
 const Subscription = () => {
   const navigation = useNavigation();
@@ -46,7 +47,7 @@ const Subscription = () => {
           )}
         />
         <TouchableOpacity>
-          <Text style={styles.allText}>All</Text>
+          <Text style={styles.allText}>{strings.All}</Text>
         </TouchableOpacity>
       </View>
      
@@ -82,7 +83,7 @@ const Subscription = () => {
       
       <View >
         {subscriptions.length === 0 ? (
-          <Text style={styles.emptyHistory}>No subscribed channels yet.</Text>
+          <Text style={styles.emptyHistory}>{strings.NoSubscribers}</Text>
         ) : (
           <FlatList
             data={subscriptions}

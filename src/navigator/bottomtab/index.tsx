@@ -2,7 +2,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {ScreenNames} from '../screennames';
 import {Icons} from '../../assets';
-import { Image } from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 import Home from '../../screens/home';
 import Profile from '../../screens/profile';
 import colors from '../../theme/color';
@@ -25,13 +25,13 @@ const BottomTab = () => {
               break;
 
             case ScreenNames.Shorts:
-              iconName = focused ? Icons.shortsSelected : Icons.shortsUnSelected;
+              iconName = focused
+                ? Icons.shortsSelected
+                : Icons.shortsUnSelected;
               break;
 
-              case ScreenNames.AddScreen:
-              iconName = focused
-                ? Icons.AddSelected
-                : Icons.AddSelected;
+            case ScreenNames.AddScreen:
+              iconName = focused ? Icons.AddSelected : Icons.AddSelected;
               break;
 
             case ScreenNames.Subscription:
@@ -50,12 +50,12 @@ const BottomTab = () => {
               iconName = Icons.homeSelected;
               break;
           }
-          return <Image source={iconName} style={{width: 20, height: 20}} />;
+          return <Image source={iconName} style={styles.sizeImage} />;
         },
-        tabBarActiveTintColor: colors.black, 
-        tabBarInactiveTintColor: colors.black, 
+        tabBarActiveTintColor: colors.black,
+        tabBarInactiveTintColor: colors.black,
         tabBarLabelStyle: {
-          fontSize: 12, 
+          fontSize: 12,
         },
       })}>
       <Tab.Screen
@@ -68,24 +68,30 @@ const BottomTab = () => {
         name={ScreenNames.Shorts}
         options={{headerShown: false}}
       />
-       <Tab.Screen
+      <Tab.Screen
         component={AddScreen}
         name={ScreenNames.AddScreen}
         options={{headerShown: false}}
       />
-       <Tab.Screen
+      <Tab.Screen
         component={Subscription}
         name={ScreenNames.Subscription}
         options={{headerShown: false}}
       />
-       <Tab.Screen
+      <Tab.Screen
         component={Profile}
         name={ScreenNames.Profile}
         options={{headerShown: false}}
       />
-     
     </Tab.Navigator>
   );
 };
 
 export default BottomTab;
+
+const styles = StyleSheet.create({
+  sizeImage: {
+    width: 20,
+    height: 20,
+  },
+});

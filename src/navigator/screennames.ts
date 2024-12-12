@@ -1,12 +1,7 @@
 const ScreenNames = {
     SplashScreen: 'SplashScreen',
-    // Tutorial:'Tutorial',
     SignInScreen: 'SignInScreen',
     SignUpScreen: 'SignUpScreen',
-    // Otp: 'Otp',
-    // Phone: 'Phone',
-    // Forgot: 'Forgot',
-    // Reset:'Reset',
     BottomTab: 'BottomTab',
     Home: 'Home',
     Profile: 'Profile',

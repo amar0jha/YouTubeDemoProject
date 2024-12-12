@@ -8,6 +8,7 @@ import styles from './style';
 import ButtonComponent from '../../components/customBtn';
 import { signInValidate, signInValidations } from './validation';
 import auth from '@react-native-firebase/auth'
+import strings from '../../theme/string';
 
 const SignInScreen = () => {
   const navigation: any = useNavigation();
@@ -15,17 +16,17 @@ const SignInScreen = () => {
   const [validationErrors, setvalidationErrors]: any = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  const checkLoginStatus = async () => {
+    const userToken = await AsyncStorage.getItem('userToken');
+    if (userToken) {
+      setIsLoggedIn(true);
+      navigation.reset({
+        index: 0,
+        routes: [{name: 'BottomTab'}],
+      });
+    }
+  };
   useEffect(() => {
-    const checkLoginStatus = async () => {
-      const userToken = await AsyncStorage.getItem('userToken');
-      if (userToken) {
-        setIsLoggedIn(true);
-        navigation.reset({
-          index: 0,
-          routes: [{name: 'BottomTab'}],
-        });
-      }
-    };
     checkLoginStatus();
   }, [navigation]);
 
@@ -99,7 +100,7 @@ return (
           />
           
           <TouchableOpacity style={styles.forgotPass}>
-            <Text style={styles.forgotPassText}>Forgot Password?</Text>
+            <Text style={styles.forgotPassText}>{strings.Forgot}</Text>
           </TouchableOpacity>
 
           <ButtonComponent
@@ -115,7 +116,7 @@ return (
         <View style={styles.googleContainer}>
           <Image source={Icons.googleLogin} style={styles.googleLogo} />
           <TouchableOpacity>
-            <Text style={styles.googleText}>Log in with Google</Text>
+            <Text style={styles.googleText}>{strings.GoogleLogin}</Text>
           </TouchableOpacity>
         </View>
 
@@ -129,7 +130,7 @@ return (
         <View style={styles.signUpContainer}>
           <Text style={styles.newAccountText}>Don't have an account?</Text>
           <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')}>
-            <Text style={styles.signupText}> Sign up</Text>
+            <Text style={styles.signupText}>{strings.SignUp}</Text>
           </TouchableOpacity>
         </View>
       </View>

@@ -8,6 +8,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import videoData from '../../../videos.json';
 import styles from './style';
+import strings from '../../theme/string';
 
 const SearchScreen = () => {
   const navigation = useNavigation();
@@ -108,7 +109,7 @@ const SearchScreen = () => {
 
       <View style={styles.results}>
         {searchQuery && filteredData.length === 0 ? (
-          <Text style={styles.noResultsText}>No results found</Text>
+          <Text style={styles.noResultsText}>{strings.NoResultFound}</Text>
         ) : (
           <FlatList
             data={filteredData}
@@ -121,7 +122,7 @@ const SearchScreen = () => {
 
       {!searchQuery && searchHistory.length > 0 && (
         <View style={styles.historyContainer}>
-          <Text style={styles.historyTitle}>Recent Searches</Text>
+          <Text style={styles.historyTitle}>{strings.RecentSearches}</Text>
           <FlatList
             data={searchHistory}
             keyExtractor={(item, index) => index.toString()}

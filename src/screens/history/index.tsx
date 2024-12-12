@@ -6,6 +6,7 @@ import HomeHeader from '../../components/header';
 import { useSelector } from 'react-redux';
 import styles from './style';
 import {useNavigation} from '@react-navigation/native';
+import strings from '../../theme/string';
 
 
 const HistoryScreen = () => {
@@ -37,9 +38,9 @@ const HistoryScreen = () => {
   return (
     <View style={styles.container}>
         <HomeHeader showBackButton onBackPress={() => navigation.goBack()} onSearchPress={handleSearchPress}/>
-      <Text style={styles.headerText}>History</Text>
+      <Text style={styles.headerText}>{strings.History}</Text>
       {history.length === 0 ? (
-        <Text style={styles.emptyHistory}>No history yet.</Text>
+        <Text style={styles.emptyHistory}>{strings.NoHistory}</Text>
       ) : (
         <FlatList
           data={history}
