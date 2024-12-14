@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 import { addSubscription, removeSubscription } from '../../redux/actions/subscriptionActions';
 import strings from '../../theme/string';
+import Share from 'react-native-share';
+
 
 const SingleShortVideo = ({ item, index, currentIndex ,likeCounts,  disliked,   dislikeCounts, liked, onLikePress, onDislikePress }: any) => {
 
@@ -61,6 +63,23 @@ const SingleShortVideo = ({ item, index, currentIndex ,likeCounts,  disliked,   
     setLocalDisliked(disliked)
   }, [likeCounts, liked,dislikeCounts,disliked]);
 
+
+
+  const handleShare = () => {
+    Share.open({
+      message:
+        item.videoImage,
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        err && console.log(err);
+      });
+
+  }
+
+  
   return (
     <View style={styles.mainContainer}>
       <View
@@ -131,7 +150,7 @@ const SingleShortVideo = ({ item, index, currentIndex ,likeCounts,  disliked,   
               style={styles.commentsImg}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.icons}>
+          <TouchableOpacity style={styles.icons} onPress={handleShare}>
             <Image
               source={Icons.shareShortsIcon}
               style={styles.shareImg}

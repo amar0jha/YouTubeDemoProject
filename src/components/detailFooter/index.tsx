@@ -16,7 +16,7 @@ import { addDownload, removeDownload } from '../../redux/actions/downloadActions
 import Share from 'react-native-share';
 
 const DetailFooter = ({ videoData }: any) => {
-  const [videoStates, setVideoStates] = useState({});
+  const [videoStates, setVideoStates] = useState<any>({});
 
   const { id, channelName, profileImage, subscribers } = videoData;
   const [isSubscribed, setIsSubscribed] = useState(false);

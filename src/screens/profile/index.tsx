@@ -57,13 +57,17 @@ const Profile = () => {
       onPressP: Icons.downloadedIcon,
     },
     {icon: Icons.yourMoviesIcon, text: 'Your movies', onPress: () => {}},
-    {icon: Icons.premiumIcon, text: 'Get YouTube Premium', onPress: () => {}},
+    {icon: Icons.premiumIcon, text: 'Get YouTube Premium', onPress: () => {handlePaymentScreen()}},
     {icon: Icons.timeWatchedIcon, text: 'Time watched', onPress: () => {}},
     {icon: Icons.helpIcon, text: 'Help and feedback', onPress: () => {}},
   ];
 
   const handleDownloadScreen = () => {
     navigation.navigate('DownloadScreen');
+  };
+
+  const handlePaymentScreen = () => {
+    navigation.navigate('PaymentScreen');
   };
 
   const renderItemDataCard = ({item, index}: any) => (

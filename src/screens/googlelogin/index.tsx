@@ -15,7 +15,7 @@ interface SignInGoogleProps {
     navigation: any;
 }
 
-const SignInGoogle: React.FC<SignInGoogleProps> = ({ navigation }) => {
+const SignInGoogle=({ navigation }: SignInGoogleProps) => {
     const dispatch = useDispatch();
     const insets = useSafeAreaInsets();
 

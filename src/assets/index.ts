@@ -107,6 +107,16 @@ const Icons = {
 const Images = {
     youtubeLogo:require(`${pathToImages}/youtubeLogo.png`),
     dummyProfile:require(`${pathToImages}/dummyprofile.jpg`),
+    payment:require(`${pathToImages}/color1.jpg`),
+    paymentBg:require(`${pathToImages}/color3.jpeg`),
+    paymentBg1:require(`${pathToImages}/bg1.png`),
+    paymentBg2:require(`${pathToImages}/bg2.png`),
+    paymentBg3:require(`${pathToImages}/bg3.png`),
+    paymentBg4:require(`${pathToImages}/bg4.jpg`),
+    paymentBg5:require(`${pathToImages}/bg5.jpg`),
+    paymentBg6:require(`${pathToImages}/bg6.jpg`),
+    paymentBg7:require(`${pathToImages}/bg7.jpg`),
+    paymentBg8:require(`${pathToImages}/bg8.jpeg`),
 
 }
 

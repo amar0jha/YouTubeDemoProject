@@ -6,6 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { Icons } from '../../assets';
 import strings from '../../theme/string';
+import auth from '@react-native-firebase/auth';
 
 const SettingScreen = () => {
   const navigation: any = useNavigation();
@@ -62,6 +63,15 @@ const SettingScreen = () => {
       routes: [{ name: 'SignInScreen' }],
     });
   };
+
+  // const handleLogout = async () => {
+  //   await AsyncStorage.removeItem('userToken'); 
+  //   await auth().signOut(); 
+  //   navigation.reset({
+  //     index: 0,
+  //     routes: [{ name: 'SignInScreen' }],
+  //   });
+  // };
 
   const handleBack = () => {
     navigation.goBack(); 

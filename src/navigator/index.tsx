@@ -13,6 +13,7 @@ import SignUpScreen from '../screens/signUp';
 import SettingScreen from '../screens/settings';
 import DownloadScreen from '../screens/download';
 import SignInGoogle from '../screens/googlelogin';
+import PaymentScreen from '../screens/payment';
 
 const Stack = createNativeStackNavigator();
 
@@ -84,11 +85,24 @@ const RootNavigator = () => {
           options={{headerShown: false}}
         />
 
-<Stack.Screen
+        <Stack.Screen
           component={SignInGoogle}
           name={ScreenNames.SignInGoogle}
           options={{headerShown: false}}
         />
+
+        <Stack.Screen
+          component={PaymentScreen}
+          name={ScreenNames.PaymentScreen}
+          options={{headerShown: false}}
+        />
+
+        {/* <Stack.Screen
+          component={VoiceScreen}
+          name={ScreenNames.VoiceScreen}
+          options={{headerShown: false}}
+        /> */}
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
