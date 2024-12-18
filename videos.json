@@ -1,6 +1,8 @@
 [
     {
       "id": 1,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Music",
       "videoImage": "https://vjs.zencdn.net/v/oceans.mp4",
       "videoTime": "00:46",
       "profileImage": "https://i.pinimg.com/564x/b7/35/c1/b735c1bfcc3c08157f22495bc76b855e.jpg",
@@ -10,11 +12,14 @@
       "channelName": "Peaky Blinders",
       "subscribers": "4M",
       "like":"12K",
-      "disLike":"1K"
+      "disLike":"1K",
+      
   
     },
     {
       "id": 2,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"T-Series",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
       "videoTime": "00:15",
       "profileImage": "https://i.pinimg.com/564x/ac/64/6d/ac646da66ec4389acebd0eafd595f4ad.jpg",
@@ -28,6 +33,8 @@
     },
     {
       "id": 3,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Indian pop music",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
       "videoTime": "10:53",
       "profileImage": "https://i.pinimg.com/564x/92/98/29/9298299fb18c4bd7ba1e56e606c12aee.jpg",
@@ -41,6 +48,8 @@
     },
     {
       "id": 4,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"News",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
       "videoTime": "09:56",
      "profileImage": "https://i.pinimg.com/564x/57/f2/d4/57f2d421ccaa1acb73533c8cacd7b098.jpg",
@@ -54,6 +63,8 @@
     },
     {
       "id": 5,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"T-Series",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
       "videoTime": "00:15",
      "profileImage": "https://i.pinimg.com/564x/59/a0/9b/59a09b02e73f2c9220b1ba5c7a940950.jpg",
@@ -67,6 +78,8 @@
     },
     {
       "id": 6,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Music",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
       "videoTime": "01:00",
       "profileImage": "https://i.pinimg.com/564x/ef/ee/11/efee1101dc42f70ad7ca92dd95b4decf.jpg",
@@ -80,8 +93,10 @@
     },
     {
       "id": 7,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Indian pop music",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-      "videoTime": ":00:15",
+      "videoTime": "00:15",
       "profileImage": "https://i.pinimg.com/564x/3d/4e/25/3d4e258800288b8c0c10a96c47822ec1.jpg",
       "description": "The History of Bollywood | In-depth Documentary with @Rajeev",
       "views": "5M Views",
@@ -93,6 +108,8 @@
     },
     {
       "id": 8,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"News",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
       "videoTime": "14:47",
       "profileImage": "https://i.pinimg.com/564x/2a/b2/38/2ab2380a7d4dedcf3e988e220a71b102.jpg",
@@ -106,6 +123,8 @@
     },
     {
       "id": 9,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Comedy clubs",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
       "videoTime": "09:54",
       "profileImage": "https://i.pinimg.com/564x/b9/3b/91/b93b913e1d2b5937eed84cf73110937f.jpg",
@@ -119,6 +138,8 @@
     },
     {
       "id": 10,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Music",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
       "videoTime": "12:14",
       "profileImage": "https://i.pinimg.com/564x/71/4e/63/714e6334902e45c06244a47984e1daab.jpg",
@@ -132,6 +153,8 @@
     },
     {
       "id": 11,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Neha Kakkar",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
       "videoTime": "00:47",
       "profileImage": "https://i.pinimg.com/564x/db/bd/7d/dbbd7daad09de5efbd35f148e13254b9.jpg",
@@ -145,6 +168,8 @@
     },
     {
       "id": 12,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"T-Series",
       "videoImage": "https://videos.pexels.com/video-files/8474642/8474642-hd_1920_1080_30fps.mp4",
       "videoTime": "00:10",
       "profileImage": "https://i.pinimg.com/736x/43/33/1d/43331d195ddd5ab9cbd8223a86c76200.jpg",
@@ -158,6 +183,8 @@
     },
     {
       "id": 13,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Indian pop music",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
       "videoTime": "01:00",
       "profileImage": "https://i.pinimg.com/564x/13/94/21/1394213d58f56294eea7dc35e9f105b6.jpg",
@@ -171,6 +198,8 @@
     },
     {
       "id": 14,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"News to you",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
       "videoTime": "00:15",
       "profileImage": "https://i.pinimg.com/564x/5b/33/78/5b337873be0935cb85f0a028b1c7d4de.jpg",
@@ -184,6 +213,8 @@
     },
     {
       "id": 15,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Posts",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
       "videoTime": "14:47",
       "profileImage": "https://i.pinimg.com/564x/72/0d/d7/720dd7688cda969d5741066e981d7de5.jpg",
@@ -197,6 +228,8 @@
     },
     {
       "id": 16,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Comedy clubs",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
       "videoTime": "09:54",
       "profileImage": "https://i.pinimg.com/564x/8f/64/82/8f64823cc88669142ac112e7b7a61c76.jpg",
@@ -210,6 +243,8 @@
     },
     {
       "id": 17,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Recently uploaded",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
       "videoTime": "12:14",
       "profileImage": "https://i.pinimg.com/736x/93/27/00/9327008da3d99bcb8d871226e2035eb0.jpg",
@@ -223,6 +258,8 @@
     },
     {
       "id": 18,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Dramedy",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
       "videoTime": "09:56",
       "profileImage": "https://i.pinimg.com/564x/83/47/16/83471650d1513b40f8eb23c32ec4e09e.jpg",
@@ -236,6 +273,8 @@
     },
     {
       "id": 19,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Jukebox",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
       "videoTime": "00:15",
       "profileImage": "https://i.pinimg.com/564x/a1/18/3a/a1183a55073194e0a3b654acd8c0aca7.jpg",
@@ -249,6 +288,8 @@
     },
     {
       "id": 20,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Comedy clubs",
       "videoImage": "https://videos.pexels.com/video-files/8474642/8474642-hd_1920_1080_30fps.mp4",
       "videoTime": "00:10",
       "profileImage": "https://i.pinimg.com/564x/12/d4/b9/12d4b9f0c04adb9c01dd616e313241d6.jpg",
@@ -262,6 +303,8 @@
     },
     {
       "id": 21,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Comedy clubs",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
       "videoTime": "00:15",
       "profileImage": "https://i.pinimg.com/564x/73/40/63/7340636d9bc19af8acb231c59ea8668f.jpg",
@@ -275,6 +318,8 @@
     },
     {
       "id": 22,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Music",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
       "videoTime": "14:47",
       "profileImage": "https://i.pinimg.com/564x/00/44/cc/0044cc4769e704b12fd8952243c1f813.jpg",
@@ -288,6 +333,8 @@
     },
     {
       "id": 23,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Neha Kakkar",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
       "videoTime": "09:54",
       "profileImage": "https://i.pinimg.com/564x/aa/04/4c/aa044ce64c602dc46b63099aa48638db.jpg",
@@ -301,6 +348,8 @@
     },
     {
       "id": 24,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"News",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
       "videoTime": "09:54",
       "profileImage": "https://i.pinimg.com/736x/cc/4a/ed/cc4aed998ec478906ed1df1268553538.jpg",
@@ -314,6 +363,8 @@
     },
     {
       "id": 25,
+      "thumbnailUrl": "https://i.ytimg.com/vi_webp/gWw23EYM9VM/maxresdefault.webp",
+      "tag":"Jukebox",
       "videoImage": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
       "videoTime": "10:53",
       "profileImage": "https://i.pinimg.com/564x/a1/83/a4/a183a46fcf5da179beb2b1d1ed1111c3.jpg",

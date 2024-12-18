@@ -102,6 +102,18 @@ fullScreenImage: {
   resizeMode: 'cover',
 },
 
+muteButton: {
+  position: 'absolute',
+  top: 20,
+  right: 20,
+  zIndex: 10,
+},
+muteButtonIcon: {
+  width: 20,
+  height: 20,
+  tintColor: colors.white,
+},
+
 // fullScreenBtn: {
 //   position: 'absolute',
 //   bottom: 20,

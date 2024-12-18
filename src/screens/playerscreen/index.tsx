@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text, Image, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, Image, FlatList, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import styles from './style';
 import FooterItems from '../../components/footer';
 import videos from '../../../videos.json';
@@ -25,33 +25,39 @@ const PlayerScreen = ({ route }: any) => {
     addToHistory(videoData);
   }, [videoData, dispatch]);
 
-  const renderItem = ({ item }: any) => <HomeVideoItems video={item} needProfileIcon needMoreIcon />;
+  const renderItem = ({ item }: any) => <HomeVideoItems needAutoPlay = {false} video={item} needProfileIcon needMoreIcon />;
   const handleKeyExtractor = (item: any) => item.id.toString();
 
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <View style={styles.container}>
-        
+
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
           <Image source={Icons.backIcons} style={styles.imageSizeBack} />
         </TouchableOpacity>
 
-        <ThumbnailComponent video={videoData} needMoreIcon forward backward play pause showProgressBar fullScreen styles={styles.containerImage} />
+        <ThumbnailComponent needAutoPlay video={videoData} needMoreIcon forward backward play pause showProgressBar volume fullScreen styles={styles.containerImage} />
 
         <View style={styles.footerContainer}>
           <TouchableOpacity>
             <FooterItems video={videoData} needProfileIcon={false} needMoreIcon={false} />
           </TouchableOpacity>
-          <DetailFooter videoData={videoData} />
+          
         </View>
+        <ScrollView bounces={false}>
+
+        <DetailFooter videoData={videoData} />
 
         <FlatList
           data={videos}
           renderItem={renderItem}
           keyExtractor={handleKeyExtractor}
           bounces={false}
-          style={styles.flatListContainer} 
+          style={styles.flatListContainer}
         />
+        </ScrollView>
+
+
       </View>
     </SafeAreaView>
   );

@@ -14,6 +14,8 @@ import SettingScreen from '../screens/settings';
 import DownloadScreen from '../screens/download';
 import SignInGoogle from '../screens/googlelogin';
 import PaymentScreen from '../screens/payment';
+import VoiceScreen from '../screens/voice';
+import YouTubePremium from '../screens/premium';
 
 const Stack = createNativeStackNavigator();
 
@@ -97,12 +99,18 @@ const RootNavigator = () => {
           options={{headerShown: false}}
         />
 
-        {/* <Stack.Screen
+        <Stack.Screen
           component={VoiceScreen}
           name={ScreenNames.VoiceScreen}
           options={{headerShown: false}}
-        /> */}
-        
+        />
+
+        <Stack.Screen
+          component={YouTubePremium}
+          name={ScreenNames.YouTubePremium}
+          options={{headerShown: false}}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

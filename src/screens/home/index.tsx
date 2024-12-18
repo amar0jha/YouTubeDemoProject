@@ -1,5 +1,5 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {useEffect, useState} from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -24,52 +24,71 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const videosPerPage = 5;
 
-  useEffect(() => {
-    loadMoreVideos();
-  }, []);
-
   const loadMoreVideos = () => {
     if (loading) return;
 
     setLoading(true);
     const startIndex = (currentPage - 1) * videosPerPage;
     const endIndex = startIndex + videosPerPage;
-    const newVideos = videosData.slice(startIndex, endIndex);
 
-    setVideos(prevVideos => [...prevVideos, ...newVideos]);
+    let filteredVideos = videosData.slice(startIndex, endIndex);
+    if (selectedTab !== 'All') {
+      filteredVideos = filteredVideos.filter(video => video.tag === selectedTab);
+    }
+    setVideos(prevVideos => [...prevVideos, ...filteredVideos]);
     setLoading(false);
     setCurrentPage(prevPage => prevPage + 1);
   };
+    
+  useEffect(() => {
+    loadMoreVideos();
+  }, [selectedTab]);
+
+  // const loadMoreVideos = () => {
+  //   if (loading) return;
+
+  //   setLoading(true);
+  //   const startIndex = (currentPage - 1) * videosPerPage;
+  //   const endIndex = startIndex + videosPerPage;
+  //   const newVideos = videosData.slice(startIndex, endIndex);
+
+  //   setVideos(prevVideos => [...prevVideos, ...newVideos]);
+  //   setLoading(false);
+  //   setCurrentPage(prevPage => prevPage + 1);
+  // };
 
   const handleSearchPress = () => {
     navigation.navigate('SearchScreen');
   };
 
-  const renderItem = ({item}: any) => (
+  const renderItem = ({ item }: any) => (
     <HomeVideoItems
       video={item}
       onPress={() => handleVideo(item)}
       needProfileIcon
       needMoreIcon
+      needAutoPlay={false}
     />
   );
   const handleKeyExtractor = (item: any) => item.id.toString();
 
   const handleVideo = (video: any) => {
-    navigation.navigate('PlayerScreen', {videoData: video});
+    navigation.navigate('PlayerScreen', { videoData: video });
   };
 
   const handleLoadMore = () => {
     loadMoreVideos();
   };
 
-  const tabItems = ['All', 'Music', 'Indian pop music', 'T-Series', 'Neha Kakkar', 'Live', 'News', 'Mixes', 'Bhojpuri cinema', 'Comedy clubs', 'Jukebox', 'Movie musicals','Dramedy','Rahat Fateh Ali Khan','Volleyball','Reverbation','Recently uploaded','Posts', 'News to you','Send feedback'];
+  const tabItems = ['All', 'Music', 'Indian pop music', 'T-Series', 'Neha Kakkar', 'Live', 'News', 'Mixes', 'Bhojpuri cinema', 'Comedy clubs', 'Jukebox', 'Movie musicals', 'Dramedy', 'Rahat Fateh Ali Khan', 'Volleyball', 'Reverbation', 'Recently uploaded', 'Posts', 'News to you', 'Send feedback'];
 
   const handleTabSelect = (tab: string) => {
     setSelectedTab(tab);
+    setVideos([]); 
+    setCurrentPage(1);
   };
 
-  const renderItemTab = ({ item, index }:any) => (
+  const renderItemTab = ({ item, index }: any) => (
     <TouchableOpacity
       style={[
         styles.tabItem,
@@ -109,7 +128,8 @@ const Home = () => {
         renderItem={renderItem}
         keyExtractor={handleKeyExtractor}
         bounces={false}
-        style={{marginTop: 20}}
+        showsVerticalScrollIndicator={false}
+        style={{ marginTop: 20 }}
         onEndReached={handleLoadMore}
         onEndReachedThreshold={0.5}
         ListFooterComponent={

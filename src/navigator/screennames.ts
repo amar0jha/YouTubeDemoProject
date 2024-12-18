@@ -17,6 +17,7 @@ const ScreenNames = {
     DownloadScreen:'DownloadScreen',
     SignInGoogle:'SignInGoogle',
     PaymentScreen:'PaymentScreen',
-    // VoiceScreen:'VoiceScreen',
+    VoiceScreen:'VoiceScreen',
+    YouTubePremium:'YouTubePremium',
 };
 export {ScreenNames};

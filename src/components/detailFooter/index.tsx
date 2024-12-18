@@ -63,29 +63,65 @@ const DetailFooter = ({ videoData }: any) => {
     setIsBellIconVisible(false);
   };
 
+  // const handleAction = (action: string) => {
+  //   setVideoStates((prevState) => {
+  //     const currentState = prevState[id] || {};
+  //     if (action === 'isLiked') {
+  //       return {
+  //         ...prevState,
+  //         [id]: {
+  //           ...currentState,
+  //           isLiked: !currentState.isLiked,
+  //           isDisliked: false,
+  //         },
+  //       };
+  //     }
+  //     if (action === 'isDisliked') {
+  //       return {
+  //         ...prevState,
+  //         [id]: {
+  //           ...currentState,
+  //           isDisliked: !currentState.isDisliked,
+  //           isLiked: false,
+  //         },
+  //       };
+  //     }
+  //     return {
+  //       ...prevState,
+  //       [id]: {
+  //         ...currentState,
+  //         [action]: !currentState[action],
+  //       },
+  //     };
+  //   });
+  // };
+
   const handleAction = (action: string) => {
     setVideoStates((prevState) => {
       const currentState = prevState[id] || {};
+  
       if (action === 'isLiked') {
         return {
           ...prevState,
           [id]: {
             ...currentState,
-            isLiked: !currentState.isLiked,
-            isDisliked: false,
+            isLiked: !currentState.isLiked,    
+            isDisliked: false,                 
           },
         };
       }
+  
       if (action === 'isDisliked') {
         return {
           ...prevState,
           [id]: {
             ...currentState,
-            isDisliked: !currentState.isDisliked,
-            isLiked: false,
+            isDisliked: !currentState.isDisliked,  
+            isLiked: false,                       
           },
         };
       }
+  
       return {
         ...prevState,
         [id]: {
@@ -95,6 +131,7 @@ const DetailFooter = ({ videoData }: any) => {
       };
     });
   };
+  
 
   const handleDownload = () => {
     const isDownloaded = downloads.some((video) => video.id === id);

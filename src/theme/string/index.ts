@@ -24,6 +24,13 @@ const strings = {
     All:'All',
     NoSubscribers:'No subscribed channels yet.',
     signInGoogle:'Log in with Google',
-    // SignUp:'SignUp'
-    }
+    Pay:'Pay $500',    
+    OK:'OK',
+    EnterCardDetails:'Enter Card Details',
+    TextPremium:'YouTube and YouTube Music ad-free, offline, and in the background',
+    TextPremiumSec:' Prepaid and monthly plans available. Starts at Rs 149.00/month. Free trials with monthly plans.',
+    ButtonPremium:'Get YouTube Premium',
+    SaveMoney:'Or save money with a',
+    FamilyPlan:'family or student Plan',
+}
     export default strings;

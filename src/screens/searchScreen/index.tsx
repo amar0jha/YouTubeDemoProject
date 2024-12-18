@@ -47,6 +47,7 @@ const SearchScreen = () => {
 
   const handleMicPress = () => {
     console.log('Mic button pressed!');
+    navigation.navigate('VoiceScreen');
   };
 
   const handleSearch = async (query: string) => {

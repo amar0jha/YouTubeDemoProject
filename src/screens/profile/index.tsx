@@ -67,7 +67,7 @@ const Profile = () => {
   };
 
   const handlePaymentScreen = () => {
-    navigation.navigate('PaymentScreen');
+    navigation.navigate('YouTubePremium');
   };
 
   const renderItemDataCard = ({item, index}: any) => (

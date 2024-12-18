@@ -40,6 +40,11 @@
   <string>tiktoksharesdk</string>
 </array>
 
+<key>NSMicrophoneUsageDescription</key>
+<string>We need access to your microphone to detect voice input.</string>
+<key>NSSpeechRecognitionUsageDescription</key>
+<string>We need speech recognition permission to transcribe your voice.</string>
+
 
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>

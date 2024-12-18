@@ -10,10 +10,13 @@ const ThumbnailComponent = ({
   play,
   pause,
   time,
+  volume,
   fullScreen,
   showProgressBar,
-  styles
+  styles,
+  needAutoPlay
 }: any) => {
+  console.log('needAutoPlay', needAutoPlay)
   return (
     <View style={styles}>
       <VideosComponent
@@ -23,8 +26,10 @@ const ThumbnailComponent = ({
         play={play}
         pause={pause}
         time={time}
+        volume={volume}
         showProgressBar={showProgressBar}
         fullScreen={fullScreen}
+        needAutoPlay={!needAutoPlay}
       />
     </View>
   );
